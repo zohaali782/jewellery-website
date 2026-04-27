@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suno Saheli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f0ede8",
+              blush: "#ebb8c9",
+              dark: "#1a1a1a",
+              gold: "#c9a84c",
+            },
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              sans: ["Jost", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-cream text-dark">
+    <!-- ── ANNOUNCEMENT BAR ── -->
+    <div class="bg-white border-b border-gray-200 text-center py-1.5 px-4">
+      <p class="text-xs font-semibold tracking-wide">
+        Free shipping for orders over 3500!
+      </p>
+      <p class="text-xs tracking-wide">
+        Premium Packaging On Orders Above Pkr 10,000
+      </p>
+    </div>
+
+    <!-- ── HEADER ── -->
+    <header class="bg-cream px-6 md:px-12 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Search -->
+        <div class="flex items-center">
+          <button aria-label="Search" class="hover:opacity-60 transition">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16.5" y1="16.5" x2="22" y2="22" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Logo -->
+        <a
+          href="#"
+          class="font-serif text-2xl md:text-3xl font-semibold tracking-[8px] uppercase"
+        >
+          Suno Saheli
+        </a>
+
+        <!-- Right Icons -->
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            aria-label="Account"
+            class="hidden md:flex hover:opacity-60 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Cart"
+            class="hidden md:flex hover:opacity-60 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </a>
+          <!-- Hamburger mobile -->
+          <button id="menu-btn" class="md:hidden" aria-label="Open menu">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav
+        class="hidden md:flex flex-wrap justify-center gap-6 lg:gap-8 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a href="#" class="text-xs tracking-wide underline underline-offset-4"
+          >Home</a
+        >
+        <a href="earrings.html" class="text-sm">Earrings</a>
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Neckpiece</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Rings</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Bracelets</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Bangles</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Anklets</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Nose Pin</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Ringlet</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >SALE</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Deals & Bundles</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >View All</a
+        >
+      </nav>
+
+      <!-- Mobile Nav -->
+      <nav
+        id="mobile-nav"
+        class="hidden flex-col gap-4 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a href="#" class="text-sm underline">Home</a>
+        <a href="earrings.html" class="text-sm">Earrings</a>
+        <a href="#" class="text-sm">Neckpiece</a>
+        <a href="#" class="text-sm">Rings</a>
+        <a href="#" class="text-sm">Bracelets</a>
+        <a href="#" class="text-sm">Bangles</a>
+        <a href="#" class="text-sm">Anklets</a>
+        <a href="#" class="text-sm">Nose Pin</a>
+        <a href="#" class="text-sm">Ringlet</a>
+        <a href="#" class="text-sm">SALE</a>
+        <a href="#" class="text-sm">Deals & Bundles</a>
+        <a href="#" class="text-sm">View All</a>
+        <div class="flex gap-5 pt-2">
+          <a href="#" aria-label="Account">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Cart">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ── HERO ── -->
+      <section
+        class="flex flex-col md:flex-row items-center justify-center bg-cream px-6 md:px-16 py-12 md:py-16"
+      >
+        <div
+          class="bg-dark text-white p-8 md:p-11 w-full md:w-[360px] flex-shrink-0 relative z-10 md:-mr-10 rounded-t-md md:rounded-l-md md:rounded-tr-none"
+        >
+          <h1
+            class="text-xl md:text-2xl font-semibold uppercase leading-snug tracking-wide mb-5"
+          >
+            Our Designs Never Go Out Of Trend
+          </h1>
+          <p class="text-sm text-gray-400 leading-relaxed font-light mb-7">
+            Invest in jewelry because it's something that you will wear
+            everyday, something that makes you feel good.
+          </p>
+          <a
+            href="#"
+            class="inline-block bg-gray-600 hover:bg-gray-500 transition text-white text-xs px-6 py-2.5 rounded tracking-wide"
+          >
+            Shop now
+          </a>
+        </div>
+
+        <div
+          class="w-full md:w-[420px] h-60 md:h-[360px] flex-shrink-0 z-0 rounded-b-md md:rounded-r-md md:rounded-bl-none overflow-hidden bg-[#d8d3cc]"
+        >
+          <img
+            src="images/image.jpg"
+            alt="Jewelry collection"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      <!-- ── FEATURED COLLECTION ── -->
+      <!-- ── FEATURED COLLECTION ── -->
+      <section class="bg-cream px-6 md:px-16 py-14">
+        <h2
+          class="font-serif text-2xl md:text-3xl font-normal tracking-wide mb-8 text-center md:text-left"
+        >
+          Featured collection
+        </h2>
+
+        <!-- Slider Wrapper -->
+        <div class="relative">
+          <!-- Cards Container -->
+          <div
+            id="slider"
+            class="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide pb-4"
+          >
+            <!-- Card 1 -->
+            <article
+              class="bg-[#e8e4de] rounded-lg overflow-hidden flex-shrink-0 w-[220px] md:w-[260px]"
+            >
+              <div class="w-full h-56 bg-[#d8d3cc] relative">
+                <img
+                  src="images/earring2.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 md:p-4">
+                <p class="text-xs text-gray-500 mb-1 tracking-widest">
+                  Suno Saheli
+                </p>
+                <strong class="text-sm font-medium block mb-1">Dune</strong>
+                <p class="text-sm text-gray-700">Rs.2,100.00 PKR</p>
+              </div>
+            </article>
+
+            <!-- Card 2 (with Sale badge) -->
+            <article
+              class="bg-[#e8e4de] rounded-lg overflow-hidden flex-shrink-0 w-[220px] md:w-[260px]"
+            >
+              <div class="w-full h-56 bg-[#d8d3cc] relative">
+                <img
+                  src="images/image.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded"
+                  >Sale</span
+                >
+              </div>
+              <div class="p-3 md:p-4">
+                <p class="text-xs text-gray-500 mb-1 tracking-widest">
+                  Suno Saheli
+                </p>
+                <strong class="text-sm font-medium block mb-1">SoftGem</strong>
+                <p class="text-xs text-gray-400 line-through">
+                  Rs.1,700.00 PKR
+                </p>
+                <p class="text-sm text-gray-700">Rs.1,500.00 PKR</p>
+              </div>
+            </article>
+
+            <!-- Card 3 (with Sale badge) -->
+            <article
+              class="bg-[#e8e4de] rounded-lg overflow-hidden flex-shrink-0 w-[220px] md:w-[260px]"
+            >
+              <div class="w-full h-56 bg-[#d8d3cc] relative">
+                <img
+                  src="images/rings2.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded"
+                  >Sale</span
+                >
+              </div>
+              <div class="p-3 md:p-4">
+                <p class="text-xs text-gray-500 mb-1 tracking-widest">
+                  Suno Saheli
+                </p>
+                <strong class="text-sm font-medium block mb-1">Cupid</strong>
+                <p class="text-xs text-gray-400 line-through">
+                  Rs.1,500.00 PKR
+                </p>
+                <p class="text-sm text-gray-700">Rs.1,200.00 PKR</p>
+              </div>
+            </article>
+
+            <!-- Card 4 (with Sale badge) -->
+            <article
+              class="bg-[#e8e4de] rounded-lg overflow-hidden flex-shrink-0 w-[220px] md:w-[260px]"
+            >
+              <div class="w-full h-56 bg-[#d8d3cc] relative">
+                <img
+                  src="images/jewel.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded"
+                  >Sale</span
+                >
+              </div>
+              <div class="p-3 md:p-4">
+                <p class="text-xs text-gray-500 mb-1 tracking-widest">
+                  Suno Saheli
+                </p>
+                <strong class="text-sm font-medium block mb-1">Glimflip</strong>
+                <p class="text-xs text-gray-400 line-through">
+                  Rs.1,500.00 PKR
+                </p>
+                <p class="text-sm text-gray-700">Rs.1,300.00 PKR</p>
+              </div>
+            </article>
+
+            <!-- Card 5 (with Sale badge) -->
+            <article
+              class="bg-[#e8e4de] rounded-lg overflow-hidden flex-shrink-0 w-[220px] md:w-[260px]"
+            >
+              <div class="w-full h-56 bg-[#d8d3cc] relative">
+                <img
+                  src="images/ringsimage.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+                <span
+                  class="absolute top-3 left-3 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded"
+                  >Sale</span
+                >
+              </div>
+              <div class="p-3 md:p-4">
+                <p class="text-xs text-gray-500 mb-1 tracking-widest">
+                  Suno Saheli
+                </p>
+                <strong class="text-sm font-medium block mb-1"
+                  >Intuition</strong
+                >
+                <p class="text-xs text-gray-400 line-through">
+                  Rs.2,000.00 PKR
+                </p>
+                <p class="text-sm text-gray-700">Rs.1,700.00 PKR</p>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article
+              class="bg-[#e8e4de] rounded-lg overflow-hidden flex-shrink-0 w-[220px] md:w-[260px]"
+            >
+              <div class="w-full h-56 bg-[#d8d3cc]">
+                <img
+                  src="images/earring.jpg"
+                  alt="Product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 md:p-4">
+                <p class="text-xs text-gray-500 mb-1 tracking-widest">
+                  Suno Saheli
+                </p>
+
+                <strong class="text-sm font-medium block mb-1"
+                  >Suno Saheli</strong
+                >
+                <p class="text-sm text-gray-700">Rs.1,400.00 PKR</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Prev Button -->
+          <button
+            id="prev-btn"
+            onclick="slideLeft()"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[#ebb8c9] border border-[#d4a0b0] rounded-full w-9 h-9 flex items-center justify-center shadow hover:bg-[#d4a0b0] transition z-10"
+          ></button>
+
+          <!-- Next Button -->
+          <button
+            id="next-btn"
+            onclick="slideRight()"
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[#ebb8c9] border border-[#d4a0b0] rounded-full w-9 h-9 flex items-center justify-center shadow hover:bg-[#d4a0b0] transition z-10"
+          ></button>
+        </div>
+
+        <!-- Page Counter -->
+        <div
+          class="flex items-center justify-center gap-3 mt-6 text-sm text-gray-500"
+        >
+          <button
+            onclick="slideLeft()"
+            class="hover:text-dark transition"
+          ></button>
+          <span id="page-counter">1 / 3</span>
+          <button
+            onclick="slideRight()"
+            class="hover:text-dark transition"
+          ></button>
+        </div>
+      </section>
+      <!-- ── BRAND BANNER ── -->
+      <section class="bg-gold text-white text-center px-8 md:px-24 py-14">
+        <h2
+          class="font-serif text-2xl md:text-3xl font-semibold tracking-wide mb-4"
+        >
+          Western - Chic - Trendy
+        </h2>
+        <p class="text-sm leading-relaxed text-yellow-100 max-w-lg mx-auto">
+          Zitah can be defined by western, chic and trendy. Started in 2020 by a
+          passionate and graceful Mompreneur working hard to bring quality
+          products.
+        </p>
+      </section>
+
+      <!-- ── IMAGE GALLERY ── -->
+      <section
+        class="bg-blush px-6 md:px-16 py-14 flex flex-col md:flex-row gap-6 items-start"
+      >
+        <div class="w-full md:w-[35%] flex-shrink-0">
+          <div class="w-full h-64 md:h-[340px] rounded-xl overflow-hidden">
+            <img
+              src="images/rings2.jpg"
+              alt="Rings collection"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="mt-4 text-2xl font-medium">Rings →</p>
+        </div>
+        <div class="flex-1">
+          <div class="w-full h-72 md:h-[420px] rounded-xl overflow-hidden">
+            <img
+              src="images/photo7.jpg"
+              alt="Jewelry collection"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FEATURES ── -->
+      <section class="bg-blush px-6 py-16">
+        <div class="flex flex-wrap justify-center gap-10 md:gap-20">
+          <article class="flex flex-col items-center gap-3 text-center w-28">
+            <svg
+              class="w-20 h-20"
+              viewBox="0 0 100 80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="5" y="25" width="60" height="38" rx="6" fill="#1a1a1a" />
+              <polygon points="65,30 95,20 95,55 65,63" fill="#1a1a1a" />
+              <circle cx="20" cy="63" r="10" fill="#1a1a1a" />
+              <circle cx="52" cy="63" r="10" fill="#1a1a1a" />
+              <rect x="0" y="30" width="18" height="8" rx="3" fill="#1a1a1a" />
+              <rect x="0" y="22" width="12" height="8" rx="3" fill="#1a1a1a" />
+            </svg>
+            <p class="text-sm font-medium">Fast Shipping</p>
+          </article>
+
+          <article class="flex flex-col items-center gap-3 text-center w-28">
+            <svg
+              class="w-20 h-20"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="46"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="6"
+              />
+              <path
+                d="M28 58 Q38 72 58 62 Q70 56 72 44"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M22 46 Q24 32 34 26 Q44 20 56 24"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <p class="text-sm font-medium">24/7 Online Support</p>
+          </article>
+
+          <article class="flex flex-col items-center gap-3 text-center w-28">
+            <svg
+              class="w-20 h-20"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="10"
+                y="10"
+                width="80"
+                height="80"
+                rx="18"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="6"
+              />
+              <circle cx="35" cy="42" r="6" fill="#1a1a1a" />
+              <circle cx="65" cy="42" r="6" fill="#1a1a1a" />
+              <path
+                d="M28 65 Q50 82 72 65"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <p class="text-sm font-medium">Satisfaction Guaranteed</p>
+          </article>
+
+          <article class="flex flex-col items-center gap-3 text-center w-28">
+            <svg
+              class="w-20 h-20"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="15"
+                y="45"
+                width="70"
+                height="45"
+                rx="4"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="5"
+              />
+              <rect
+                x="25"
+                y="55"
+                width="50"
+                height="7"
+                fill="#1a1a1a"
+                opacity="0.25"
+              />
+              <rect
+                x="25"
+                y="66"
+                width="50"
+                height="7"
+                fill="#1a1a1a"
+                opacity="0.25"
+              />
+              <rect
+                x="25"
+                y="77"
+                width="50"
+                height="7"
+                fill="#1a1a1a"
+                opacity="0.25"
+              />
+              <path
+                d="M38 45 Q38 20 50 15 Q62 20 62 45"
+                fill="none"
+                stroke="#1a1a1a"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+              <rect
+                x="44"
+                y="41"
+                width="12"
+                height="10"
+                rx="2"
+                fill="#1a1a1a"
+              />
+              <path
+                d="M30 10 Q50 4 70 10 Q65 22 50 18 Q35 22 30 10Z"
+                fill="#1a1a1a"
+              />
+              <line
+                x1="50"
+                y1="18"
+                x2="50"
+                y2="45"
+                stroke="#1a1a1a"
+                stroke-width="4"
+              />
+            </svg>
+            <p class="text-sm font-medium">Box Packaging</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- ── REVIEWS SECTION ── -->
+    <section class="bg-cream px-6 md:px-16 py-14">
+      <h2
+        class="font-serif text-2xl md:text-3xl font-normal tracking-wide text-center mb-10"
+      >
+        What Our Customers Say
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <article class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex gap-1 mb-3">
+            <span class="text-yellow-400 text-lg">★★★★★</span>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            "Absolutely love my bracelet! The quality is amazing and it looks
+            exactly like the pictures. Will definitely order again!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-[#ebb8c9] flex items-center justify-center text-sm font-semibold text-white"
+            >
+              A
+            </div>
+            <div>
+              <p class="text-sm font-medium">Ayesha K.</p>
+              <p class="text-xs text-gray-400">Karachi</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex gap-1 mb-3">
+            <span class="text-yellow-400 text-lg">★★★★★</span>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            "Fast delivery and beautiful packaging! The necklace is so elegant,
+            I got so many compliments. Highly recommend Ozitah!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-[#ebb8c9] flex items-center justify-center text-sm font-semibold text-white"
+            >
+              S
+            </div>
+            <div>
+              <p class="text-sm font-medium">Sara M.</p>
+              <p class="text-xs text-gray-400">Lahore</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex gap-1 mb-3">
+            <span class="text-yellow-400 text-lg">★★★★☆</span>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            "Very pretty rings! The box packaging was so cute, felt like a gift.
+            Customer service was really helpful too."
+          </p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-[#ebb8c9] flex items-center justify-center text-sm font-semibold text-white"
+            >
+              F
+            </div>
+            <div>
+              <p class="text-sm font-medium">Fatima R.</p>
+              <p class="text-xs text-gray-400">Islamabad</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="bg-dark text-white text-center px-6 pt-14 pb-6">
+      <div class="mb-10">
+        <h3 class="font-serif text-3xl md:text-4xl font-semibold mb-3">
+          Subscribe to our emails
+        </h3>
+        <p class="text-xs text-gray-400 mb-6">
+          Join our email list for exclusive offers and the latest news.
+        </p>
+        <div
+          class="flex items-center max-w-sm mx-auto border border-gray-600 rounded overflow-hidden"
+        >
+          <input
+            type="email"
+            placeholder="Email"
+            class="flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder-gray-500 outline-none font-sans"
+          />
+          <button
+            class="px-4 py-3 border-l border-gray-600 hover:bg-gray-800 transition"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <nav
+        class="flex flex-wrap justify-center gap-5 mb-6 border-t border-gray-800 pt-8"
+      >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Search</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >About Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Contact Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Jewelry Care</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Shipping & Returns</a
+        >
+      </nav>
+
+      <div class="flex justify-center gap-5 mb-8">
+        <a
+          href="#"
+          aria-label="Facebook"
+          class="opacity-70 hover:opacity-100 transition"
+        >
+          <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5">
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="opacity-70 hover:opacity-100 transition"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            class="w-5 h-5"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="text-xs text-gray-600 border-t border-gray-800 pt-5">
+        © 2026, Suno Saheli. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+      btn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+        mobileNav.classList.toggle("flex");
+      });
+
+      // Slider Logic
+      const slider = document.getElementById("slider");
+      const counter = document.getElementById("page-counter");
+      const cardWidth = 280;
+      const visibleCards = 4;
+      const totalCards = 6;
+      const totalPages = Math.ceil(totalCards / visibleCards);
+      let currentPage = 1;
+
+      function updateCounter() {
+        counter.textContent = `${currentPage} / ${totalPages}`;
+      }
+
+      function slideRight() {
+        slider.scrollBy({ left: cardWidth * visibleCards, behavior: "smooth" });
+        if (currentPage < totalPages) currentPage++;
+        updateCounter();
+      }
+
+      function slideLeft() {
+        slider.scrollBy({
+          left: -cardWidth * visibleCards,
+          behavior: "smooth",
+        });
+        if (currentPage > 1) currentPage--;
+        updateCounter();
+      }
+    </script>
+  </body>
+</html>

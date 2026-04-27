@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earrings – Suno Saheli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f0ede8",
+              blush: "#ebb8c9",
+              dark: "#1a1a1a",
+              gold: "#c9a84c",
+            },
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              sans: ["Jost", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-cream text-dark">
+    <!-- ── ANNOUNCEMENT BAR ── -->
+    <div class="bg-white border-b border-gray-200 text-center py-1.5 px-4">
+      <p class="text-xs font-semibold tracking-wide">
+        Free shipping for orders over 3500!
+      </p>
+      <p class="text-xs tracking-wide">
+        Premium Packaging On Orders Above Pkr 10,000
+      </p>
+    </div>
+
+    <!-- ── HEADER ── -->
+    <header class="bg-cream px-6 md:px-12 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <button aria-label="Search" class="hover:opacity-60 transition">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16.5" y1="16.5" x2="22" y2="22" />
+            </svg>
+          </button>
+        </div>
+
+        <a
+          href="index.html"
+          class="font-serif text-2xl md:text-3xl font-semibold tracking-[8px] uppercase"
+          >Suno Saheli</a
+        >
+
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            aria-label="Account"
+            class="hidden md:flex hover:opacity-60 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Cart"
+            class="hidden md:flex hover:opacity-60 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </a>
+          <button id="menu-btn" class="md:hidden" aria-label="Open menu">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav
+        class="hidden md:flex flex-wrap justify-center gap-6 lg:gap-8 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a
+          href="index.html"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Home</a
+        >
+        <a
+          href="earrings.html"
+          class="text-xs tracking-wide underline underline-offset-4"
+          >Earrings</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Neckpiece</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Rings</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Bracelets</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Bangles</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Anklets</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Nose Pin</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Ringlet</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >SALE</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Deals & Bundles</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >View All</a
+        >
+      </nav>
+
+      <!-- Mobile Nav -->
+      <nav
+        id="mobile-nav"
+        class="hidden flex-col gap-4 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a href="index.html" class="text-sm">Home</a>
+        <a href="earrings.html" class="text-sm underline">Earrings</a>
+        <a href="#" class="text-sm">Neckpiece</a>
+        <a href="#" class="text-sm">Rings</a>
+        <a href="#" class="text-sm">Bracelets</a>
+        <a href="#" class="text-sm">Bangles</a>
+        <a href="#" class="text-sm">Anklets</a>
+        <a href="#" class="text-sm">Nose Pin</a>
+        <a href="#" class="text-sm">Ringlet</a>
+        <a href="#" class="text-sm">SALE</a>
+        <a href="#" class="text-sm">Deals & Bundles</a>
+        <a href="#" class="text-sm">View All</a>
+      </nav>
+    </header>
+
+    <main class="px-6 md:px-16 py-10">
+      <!-- ── PAGE TITLE ── -->
+      <h1
+        class="font-serif text-3xl md:text-4xl font-normal tracking-wide mb-8"
+      >
+        Earrings
+      </h1>
+
+      <!-- ── FILTER + SORT BAR ── -->
+      <div
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 pb-4 border-b border-gray-200"
+      >
+        <div class="flex items-center gap-3 flex-wrap">
+          <span class="text-sm font-medium">Filter:</span>
+          <div class="relative">
+            <select
+              id="filter-availability"
+              class="text-xs border border-gray-300 rounded px-3 py-1.5 bg-cream appearance-none pr-6 cursor-pointer focus:outline-none"
+            >
+              <option value="all">Availability</option>
+              <option value="instock">In Stock</option>
+              <option value="sale">On Sale</option>
+            </select>
+            <span
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"
+              >↓</span
+            >
+          </div>
+          <div class="relative">
+            <select
+              id="filter-price"
+              class="text-xs border border-gray-300 rounded px-3 py-1.5 bg-cream appearance-none pr-6 cursor-pointer focus:outline-none"
+            >
+              <option value="all">Price</option>
+              <option value="low">Low to High</option>
+              <option value="high">High to Low</option>
+            </select>
+            <span
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"
+              >↓</span
+            >
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-sm">Sort by:</span>
+          <div class="relative">
+            <select
+              id="sort-by"
+              class="text-xs border border-gray-300 rounded px-3 py-1.5 bg-cream appearance-none pr-6 cursor-pointer focus:outline-none"
+            >
+              <option value="featured">Featured</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
+            </select>
+            <span
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"
+              >↓</span
+            >
+          </div>
+          <span id="product-count" class="text-xs text-gray-500"
+            >24 products</span
+          >
+        </div>
+      </div>
+
+      <!-- ── PRODUCT GRID ── -->
+      <div
+        id="product-grid"
+        class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6"
+      ></div>
+
+      <!-- ── PAGINATION ── -->
+      <div
+        class="flex items-center justify-center gap-2 mt-14"
+        id="pagination"
+      ></div>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="bg-dark text-white text-center px-6 pt-14 pb-6 mt-14">
+      <div class="mb-10">
+        <h3 class="font-serif text-3xl md:text-4xl font-semibold mb-3">
+          Subscribe to our emails
+        </h3>
+        <p class="text-xs text-gray-400 mb-6">
+          Join our email list for exclusive offers and the latest news.
+        </p>
+        <div
+          class="flex items-center max-w-sm mx-auto border border-gray-600 rounded overflow-hidden"
+        >
+          <input
+            type="email"
+            placeholder="Email"
+            class="flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder-gray-500 outline-none font-sans"
+          />
+          <button
+            class="px-4 py-3 border-l border-gray-600 hover:bg-gray-800 transition"
+          >
+            →
+          </button>
+        </div>
+      </div>
+      <nav
+        class="flex flex-wrap justify-center gap-5 mb-6 border-t border-gray-800 pt-8"
+      >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Search</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >About Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Contact Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Jewelry Care</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Shipping & Returns</a
+        >
+      </nav>
+      <div class="flex justify-center gap-5 mb-8">
+        <a
+          href="#"
+          aria-label="Facebook"
+          class="opacity-70 hover:opacity-100 transition"
+        >
+          <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5">
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="opacity-70 hover:opacity-100 transition"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            class="w-5 h-5"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+          </svg>
+        </a>
+      </div>
+      <p class="text-xs text-gray-600 border-t border-gray-800 pt-5">
+        © 2026, Zitah. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      // ── MOBILE MENU ──
+      const btn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+      btn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+        mobileNav.classList.toggle("flex");
+      });
+
+      // ── ALL PRODUCTS DATA ──
+      const allProducts = [
+        {
+          id: 1,
+          name: "Judy",
+          price: 800,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 2,
+          name: "Bravos",
+          price: 1500,
+          oldPrice: 1800,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 3,
+          name: "Doritos",
+          price: 1500,
+          oldPrice: 1800,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 4,
+          name: "Pearl Drop",
+          price: 1200,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 5,
+          name: "Crystal Hoop",
+          price: 1600,
+          oldPrice: 2000,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 6,
+          name: "Golden Stud",
+          price: 950,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 7,
+          name: "Sophia",
+          price: 1100,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 8,
+          name: "Luna",
+          price: 1200,
+          oldPrice: 1500,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 9,
+          name: "Nova",
+          price: 1350,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 10,
+          name: "Celeste",
+          price: 1700,
+          oldPrice: 2100,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 11,
+          name: "Aurora",
+          price: 900,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 12,
+          name: "Stella",
+          price: 1400,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 13,
+          name: "Iris",
+          price: 1050,
+          oldPrice: 1300,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 14,
+          name: "Zara",
+          price: 1600,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 15,
+          name: "Ember",
+          price: 850,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 16,
+          name: "Halo",
+          price: 1250,
+          oldPrice: 1600,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 17,
+          name: "Misty",
+          price: 980,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 18,
+          name: "Goldie",
+          price: 1450,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 19,
+          name: "Dew Drop",
+          price: 1100,
+          oldPrice: 1400,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 20,
+          name: "Bliss",
+          price: 1300,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 21,
+          name: "Charm",
+          price: 750,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 22,
+          name: "Petal",
+          price: 1550,
+          oldPrice: 1900,
+          sale: true,
+          image: "",
+        },
+        {
+          id: 23,
+          name: "Whisper",
+          price: 1200,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+        {
+          id: 24,
+          name: "Glow",
+          price: 1650,
+          oldPrice: null,
+          sale: false,
+          image: "",
+        },
+      ];
+
+      const PRODUCTS_PER_PAGE = 8;
+      let currentPage = 1;
+      let filteredProducts = [...allProducts];
+
+      // ── RENDER PRODUCTS ──
+      function renderProducts() {
+        const grid = document.getElementById("product-grid");
+        const start = (currentPage - 1) * PRODUCTS_PER_PAGE;
+        const end = start + PRODUCTS_PER_PAGE;
+        const pageProducts = filteredProducts.slice(start, end);
+
+        document.getElementById("product-count").textContent =
+          `${filteredProducts.length} products`;
+
+        grid.innerHTML = pageProducts
+          .map(
+            (p) => `
+        <article class="group cursor-pointer" onclick="window.location='product.html?id=${p.id}'">
+          <div class="w-full h-56 md:h-64 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative">
+            ${p.image ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" />` : '<div class="w-full h-full bg-[#d8d3cc]"></div>'}
+            ${p.sale ? '<span class="absolute top-2 left-2 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded">Sale</span>' : ""}
+          </div>
+          <p class="text-xs text-gray-500 mb-0.5 tracking-widest">Suno Sahel</p>
+          <h2 class="text-sm font-medium mb-1 group-hover:underline underline-offset-2">${p.name}</h2>
+          ${p.oldPrice ? `<p class="text-xs text-gray-400 line-through">Rs.${p.oldPrice.toLocaleString()}.00 PKR</p>` : ""}
+          <p class="text-sm">Rs.${p.price.toLocaleString()}.00 PKR</p>
+        </article>
+      `,
+          )
+          .join("");
+
+        renderPagination();
+      }
+
+      // ── RENDER PAGINATION ──
+      function renderPagination() {
+        const totalPages = Math.ceil(
+          filteredProducts.length / PRODUCTS_PER_PAGE,
+        );
+        const container = document.getElementById("pagination");
+
+        if (totalPages <= 1) {
+          container.innerHTML = "";
+          return;
+        }
+
+        let html = `
+        <button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? "disabled" : ""}
+          class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-200 transition text-gray-500 disabled:opacity-30">‹</button>
+      `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          html += `
+          <button onclick="changePage(${i})"
+            class="w-8 h-8 flex items-center justify-center rounded text-sm transition
+            ${i === currentPage ? "bg-dark text-white" : "hover:bg-gray-200"}">
+            ${i}
+          </button>
+        `;
+        }
+
+        html += `
+        <button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? "disabled" : ""}
+          class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-200 transition text-gray-500 disabled:opacity-30">›</button>
+      `;
+
+        container.innerHTML = html;
+      }
+
+      // ── CHANGE PAGE ──
+      function changePage(page) {
+        const totalPages = Math.ceil(
+          filteredProducts.length / PRODUCTS_PER_PAGE,
+        );
+        if (page < 1 || page > totalPages) return;
+        currentPage = page;
+        renderProducts();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // ── FILTER + SORT ──
+      function applyFilters() {
+        const availability = document.getElementById(
+          "filter-availability",
+        ).value;
+        const price = document.getElementById("filter-price").value;
+        const sort = document.getElementById("sort-by").value;
+
+        filteredProducts = allProducts.filter((p) => {
+          if (availability === "sale") return p.sale;
+          return true;
+        });
+
+        if (price === "low" || sort === "low") {
+          filteredProducts.sort((a, b) => a.price - b.price);
+        } else if (price === "high" || sort === "high") {
+          filteredProducts.sort((a, b) => b.price - a.price);
+        }
+
+        currentPage = 1;
+        renderProducts();
+      }
+
+      document
+        .getElementById("filter-availability")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("filter-price")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("sort-by")
+        .addEventListener("change", applyFilters);
+
+      // ── INIT ──
+      renderProducts();
+    </script>
+  </body>
+</html>

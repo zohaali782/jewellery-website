@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suno Saheli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f0ede8",
+              blush: "#ebb8c9",
+              dark: "#1a1a1a",
+              gold: "#c9a84c",
+            },
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              sans: ["Jost", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="font-sans bg-cream text-dark">
+    <!-- ── ANNOUNCEMENT BAR ── -->
+    <div class="bg-white border-b border-gray-200 text-center py-1.5 px-4">
+      <p class="text-xs font-semibold tracking-wide">
+        Free shipping for orders over 3500!
+      </p>
+      <p class="text-xs tracking-wide">
+        Premium Packaging On Orders Above Pkr 10,000
+      </p>
+    </div>
+
+    <!-- ── HEADER ── -->
+    <header class="bg-cream px-6 md:px-12 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <button aria-label="Search" class="hover:opacity-60 transition">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="16.5" y1="16.5" x2="22" y2="22" />
+            </svg>
+          </button>
+        </div>
+
+        <a
+          href="index.html"
+          class="font-serif text-2xl md:text-3xl font-semibold tracking-[8px] uppercase"
+          >Suno Saheli</a
+        >
+
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            aria-label="Account"
+            class="hidden md:flex hover:opacity-60 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            aria-label="Cart"
+            class="hidden md:flex hover:opacity-60 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </a>
+          <button id="menu-btn" class="md:hidden" aria-label="Open menu">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav
+        class="hidden md:flex flex-wrap justify-center gap-6 lg:gap-8 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a
+          href="index.html"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Home</a
+        >
+        <a
+          href="earrings.html"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Earrings</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Neckpiece</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Rings</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Bracelets</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Bangles</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Anklets</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Nose Pin</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Ringlet</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >SALE</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >Deals & Bundles</a
+        >
+        <a
+          href="#"
+          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          >View All</a
+        >
+      </nav>
+
+      <!-- Mobile Nav -->
+      <nav
+        id="mobile-nav"
+        class="hidden flex-col gap-4 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a href="index.html" class="text-sm">Home</a>
+        <a href="earrings.html" class="text-sm">Earrings</a>
+        <a href="#" class="text-sm">Neckpiece</a>
+        <a href="#" class="text-sm">Rings</a>
+        <a href="#" class="text-sm">Bracelets</a>
+        <a href="#" class="text-sm">Bangles</a>
+        <a href="#" class="text-sm">Anklets</a>
+        <a href="#" class="text-sm">Nose Pin</a>
+        <a href="#" class="text-sm">Ringlet</a>
+        <a href="#" class="text-sm">SALE</a>
+        <a href="#" class="text-sm">Deals & Bundles</a>
+        <a href="#" class="text-sm">View All</a>
+      </nav>
+    </header>
+
+    <main class="px-6 md:px-16 py-10">
+      <!-- ── PRODUCT DETAIL ── -->
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16">
+        <!-- LEFT — Image Gallery -->
+        <div class="w-full md:w-1/2">
+          <!-- Main Image -->
+          <div
+            class="w-full h-80 md:h-[460px] bg-[#e8e4de] rounded-xl overflow-hidden mb-4"
+          >
+            <img
+              id="main-image"
+              src="images/earring.jpg"
+              alt="Product"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Thumbnail Images -->
+          <div class="flex gap-3">
+            <div
+              onclick="changeImage('images/earring.jpg')"
+              class="w-20 h-20 bg-[#e8e4de] rounded-lg overflow-hidden cursor-pointer border-2 border-dark"
+            >
+              <img
+                src="images/earring.jpg"
+                alt="thumb1"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              onclick="changeImage('images/earring2.jpg')"
+              class="w-20 h-20 bg-[#e8e4de] rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-dark transition"
+            >
+              <img
+                src="images/earring2.jpg"
+                alt="thumb2"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              onclick="changeImage('images/photo.jpg')"
+              class="w-20 h-20 bg-[#e8e4de] rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-dark transition"
+            >
+              <img
+                src="images/photo.jpg"
+                alt="thumb3"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Product Info -->
+        <div class="w-full md:w-1/2">
+          <!-- Breadcrumb -->
+          <p class="text-xs text-gray-400 mb-3">
+            <a href="index.html" class="hover:underline">Home</a> /
+            <a href="earrings.html" class="hover:underline">Earrings</a> /
+            <span id="product-name-breadcrumb">Judy</span>
+          </p>
+
+          <!-- Name -->
+          <h1
+            id="product-name"
+            class="font-serif text-3xl md:text-4xl font-normal tracking-wide mb-2"
+          >
+            Judy
+          </h1>
+
+          <!-- Stars -->
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-yellow-400 text-sm">★★★★★</span>
+            <span class="text-xs text-gray-400">(24 reviews)</span>
+          </div>
+
+          <!-- Price -->
+          <div class="mb-6">
+            <span
+              id="product-old-price"
+              class="text-sm text-gray-400 line-through mr-2 hidden"
+            ></span>
+            <span id="product-price" class="text-lg font-medium"
+              >Rs.800.00 PKR</span
+            >
+          </div>
+
+          <!-- Quantity -->
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-sm font-medium">Quantity</span>
+            <div
+              class="flex items-center border border-gray-300 rounded overflow-hidden"
+            >
+              <button
+                onclick="decreaseQty()"
+                class="px-3 py-2 text-sm hover:bg-gray-100 transition"
+              >
+                −
+              </button>
+              <span id="qty" class="px-4 py-2 text-sm border-x border-gray-300"
+                >1</span
+              >
+              <button
+                onclick="increaseQty()"
+                class="px-3 py-2 text-sm hover:bg-gray-100 transition"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <button
+            class="w-full bg-dark text-white py-3 rounded text-sm tracking-wide hover:bg-gray-800 transition mb-3"
+          >
+            Add to cart
+          </button>
+          <button
+            class="w-full bg-[#c9a84c] text-white py-3 rounded text-sm tracking-wide hover:bg-[#b8973b] transition mb-6"
+          >
+            Buy it now
+          </button>
+
+          <!-- Product Details -->
+          <div class="space-y-2 text-sm border-t border-gray-200 pt-5">
+            <p>
+              <span class="font-medium">Material:</span>
+              <span class="text-gray-600"
+                >Stainless Steel • Waterproof & Tarnish Free</span
+              >
+            </p>
+            <p>
+              <span class="font-medium">Plating:</span>
+              <span class="text-gray-600">Gold Plated</span>
+            </p>
+            <p>
+              <span class="font-medium">Type:</span>
+              <span class="text-gray-600"
+                >Casual / Formal / Party / Daily Wear</span
+              >
+            </p>
+          </div>
+
+          <!-- Share -->
+          <div class="flex items-center gap-2 mt-5 text-sm text-gray-500">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+              <polyline points="16 6 12 2 8 6" />
+              <line x1="12" y1="2" x2="12" y2="15" />
+            </svg>
+            <span class="cursor-pointer hover:underline">Share</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── YOU MAY ALSO LIKE ── -->
+      <section class="mt-20">
+        <h2
+          class="font-serif text-2xl md:text-3xl font-normal tracking-wide mb-8"
+        >
+          You may also like
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <article class="group cursor-pointer">
+            <div
+              class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative"
+            >
+              <div class="w-full h-full bg-[#d8d3cc]"></div>
+              <span
+                class="absolute top-2 left-2 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded"
+                >Sale</span
+              >
+            </div>
+            <h3
+              class="text-sm font-medium mb-1 group-hover:underline underline-offset-2"
+            >
+              Alixa
+            </h3>
+            <p class="text-xs text-gray-400 line-through">Rs.1,500.00 PKR</p>
+            <p class="text-sm">Rs.1,300.00 PKR</p>
+          </article>
+
+          <article class="group cursor-pointer">
+            <div
+              class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3"
+            >
+              <div class="w-full h-full bg-[#d8d3cc]"></div>
+            </div>
+            <h3
+              class="text-sm font-medium mb-1 group-hover:underline underline-offset-2"
+            >
+              Jaddi
+            </h3>
+            <p class="text-sm">Rs.1,300.00 PKR</p>
+          </article>
+
+          <article class="group cursor-pointer">
+            <div
+              class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3"
+            >
+              <div class="w-full h-full bg-[#d8d3cc]"></div>
+            </div>
+            <h3
+              class="text-sm font-medium mb-1 group-hover:underline underline-offset-2"
+            >
+              Yvanka
+            </h3>
+            <p class="text-sm">Rs.1,600.00 PKR</p>
+          </article>
+
+          <article class="group cursor-pointer">
+            <div
+              class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative"
+            >
+              <div class="w-full h-full bg-[#d8d3cc]"></div>
+              <span
+                class="absolute top-2 left-2 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded"
+                >Sale</span
+              >
+            </div>
+            <h3
+              class="text-sm font-medium mb-1 group-hover:underline underline-offset-2"
+            >
+              Dolly
+            </h3>
+            <p class="text-xs text-gray-400 line-through">Rs.1,000.00 PKR</p>
+            <p class="text-sm">Rs.800.00 PKR</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="bg-dark text-white text-center px-6 pt-14 pb-6 mt-14">
+      <div class="mb-10">
+        <h3 class="font-serif text-3xl md:text-4xl font-semibold mb-3">
+          Subscribe to our emails
+        </h3>
+        <p class="text-xs text-gray-400 mb-6">
+          Join our email list for exclusive offers and the latest news.
+        </p>
+        <div
+          class="flex items-center max-w-sm mx-auto border border-gray-600 rounded overflow-hidden"
+        >
+          <input
+            type="email"
+            placeholder="Email"
+            class="flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder-gray-500 outline-none font-sans"
+          />
+          <button
+            class="px-4 py-3 border-l border-gray-600 hover:bg-gray-800 transition"
+          >
+            →
+          </button>
+        </div>
+      </div>
+      <nav
+        class="flex flex-wrap justify-center gap-5 mb-6 border-t border-gray-800 pt-8"
+      >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Search</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >About Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Contact Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Jewelry Care</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Shipping & Returns</a
+        >
+      </nav>
+      <div class="flex justify-center gap-5 mb-8">
+        <a
+          href="#"
+          aria-label="Facebook"
+          class="opacity-70 hover:opacity-100 transition"
+        >
+          <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5">
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="opacity-70 hover:opacity-100 transition"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            class="w-5 h-5"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+          </svg>
+        </a>
+      </div>
+      <p class="text-xs text-gray-600 border-t border-gray-800 pt-5">
+        © 2026, Suno Saheli. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      // ── MOBILE MENU ──
+      const btn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+      btn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+        mobileNav.classList.toggle("flex");
+      });
+
+      // ── IMAGE GALLERY ──
+      function changeImage(src) {
+        document.getElementById("main-image").src = src;
+        document
+          .querySelectorAll(".thumbnail")
+          .forEach((t) => t.classList.remove("border-dark"));
+      }
+
+      // ── QUANTITY ──
+      let qty = 1;
+      function increaseQty() {
+        qty++;
+        document.getElementById("qty").textContent = qty;
+      }
+      function decreaseQty() {
+        if (qty > 1) {
+          qty--;
+          document.getElementById("qty").textContent = qty;
+        }
+      }
+
+      // ── LOAD PRODUCT FROM URL ──
+      const products = [
+        {
+          id: 1,
+          name: "Judy",
+          price: 800,
+          oldPrice: null,
+          images: ["images/earring.jpg", "images/earring2.jpg"],
+        },
+        {
+          id: 2,
+          name: "Bravos",
+          price: 1500,
+          oldPrice: 1800,
+          images: ["images/earring2.jpg"],
+        },
+        {
+          id: 3,
+          name: "Doritos",
+          price: 1500,
+          oldPrice: 1800,
+          images: ["images/earring.jpg"],
+        },
+        {
+          id: 4,
+          name: "Pearl Drop",
+          price: 1200,
+          oldPrice: null,
+          images: ["images/photo.jpg"],
+        },
+        {
+          id: 5,
+          name: "Crystal Hoop",
+          price: 1600,
+          oldPrice: 2000,
+          images: ["images/earring.jpg"],
+        },
+        {
+          id: 6,
+          name: "Golden Stud",
+          price: 950,
+          oldPrice: null,
+          images: ["images/earring2.jpg"],
+        },
+        {
+          id: 7,
+          name: "Sophia",
+          price: 1100,
+          oldPrice: null,
+          images: ["images/photo.jpg"],
+        },
+        {
+          id: 8,
+          name: "Luna",
+          price: 1200,
+          oldPrice: 1500,
+          images: ["images/earring.jpg"],
+        },
+      ];
+
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id")) || 1;
+      const product = products.find((p) => p.id === id) || products[0];
+
+      // Update page with product data
+      document.title = `${product.name} – Suno Saheli
+      `;
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-name-breadcrumb").textContent =
+        product.name;
+      document.getElementById("product-price").textContent =
+        `Rs.${product.price.toLocaleString()}.00 PKR`;
+
+      if (product.oldPrice) {
+        const oldEl = document.getElementById("product-old-price");
+        oldEl.textContent = `Rs.${product.oldPrice.toLocaleString()}.00 PKR`;
+        oldEl.classList.remove("hidden");
+      }
+
+      if (product.images && product.images.length > 0) {
+        document.getElementById("main-image").src = product.images[0];
+      }
+    </script>
+  </body>
+</html>
