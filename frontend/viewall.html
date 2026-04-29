@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View All – Suno Saheli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Jost", sans-serif;
+        background-color: #f5f3ef;
+        color: #2c2c2c;
+      }
+      .logo {
+        font-family: "Cormorant Garamond", serif;
+        letter-spacing: 0.18em;
+      }
+      .nav-link {
+        font-size: 13px;
+        color: #2c2c2c;
+        text-decoration: none;
+        transition: opacity 0.2s;
+        white-space: nowrap;
+      }
+      .nav-link:hover {
+        opacity: 0.6;
+      }
+      .collection-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+        font-size: 2.2rem;
+      }
+      .filter-btn {
+        border: 1px solid #c8c4bc;
+        background: transparent;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-family: "Jost", sans-serif;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.2s;
+      }
+      .filter-btn:hover {
+        background: #ede9e3;
+      }
+      .sort-select {
+        border: 1px solid #c8c4bc;
+        background: #f5f3ef;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-family: "Jost", sans-serif;
+        cursor: pointer;
+        outline: none;
+      }
+      .product-card {
+        background: #fff;
+        border-radius: 2px;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+      }
+      .product-img {
+        width: 100%;
+        aspect-ratio: 1;
+        background: #e8e4de;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .sale-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #5c6b4e;
+        color: white;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 2px;
+        font-family: "Jost", sans-serif;
+      }
+      .brand-name {
+        font-size: 11px;
+        color: #888;
+        margin-top: 10px;
+      }
+      .product-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 2px;
+      }
+      .price-normal {
+        font-size: 13px;
+        color: #2c2c2c;
+        margin-top: 3px;
+      }
+      .price-old {
+        font-size: 12px;
+        color: #aaa;
+        text-decoration: line-through;
+      }
+      .price-sale {
+        font-size: 13px;
+        color: #2c2c2c;
+      }
+      .pagination-btn {
+        border: 1px solid #c8c4bc;
+        background: transparent;
+        padding: 7px 14px;
+        font-size: 12px;
+        font-family: "Jost", sans-serif;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .pagination-btn:hover,
+      .pagination-btn.active {
+        background: #2c2c2c;
+        color: #fff;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+      .hamburger span {
+        width: 22px;
+        height: 1.5px;
+        background: #2c2c2c;
+        display: block;
+        transition: all 0.3s;
+      }
+      .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background: #f5f3ef;
+        padding: 20px;
+        gap: 14px;
+        border-top: 1px solid #e0dcd6;
+      }
+      .mobile-nav.open {
+        display: flex;
+      }
+      @media (max-width: 768px) {
+        .desktop-nav {
+          display: none !important;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div
+      style="
+        background: #2c2c2c;
+        color: #f5f3ef;
+        text-align: center;
+        padding: 8px;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+      "
+    >
+      Free shipping for orders over 3500! &nbsp;|&nbsp; Premium Packaging On
+      Orders Above Pkr 10,000
+    </div>
+
+    <!-- Header -->
+    <header
+      style="
+        background: #f5f3ef;
+        border-bottom: 1px solid #e0dcd6;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      "
+    >
+      <div
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 16px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#2c2c2c"
+          stroke-width="1.5"
+          style="cursor: pointer"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <div
+          class="logo"
+          style="
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          "
+        >
+          SUNO SAHELI
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#2c2c2c"
+            stroke-width="1.5"
+            style="cursor: pointer"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#2c2c2c"
+            stroke-width="1.5"
+            style="cursor: pointer"
+          >
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <div class="hamburger" onclick="toggleMobileNav()">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <!-- Desktop Nav -->
+      <nav
+        class="desktop-nav"
+        style="
+          border-top: 1px solid #e0dcd6;
+          padding: 12px 24px;
+          display: flex;
+          justify-content: center;
+          gap: 28px;
+          flex-wrap: wrap;
+        "
+      >
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="earrings.html" class="nav-link">Earrings</a>
+        <a href="neckpiece.html" class="nav-link">Neckpiece</a>
+        <a href="rings.html" class="nav-link">Rings</a>
+        <a href="bracelets.html" class="nav-link">Bracelets</a>
+        <a href="bangles.html" class="nav-link">Bangles</a>
+        <a href="anklets.html" class="nav-link">Anklets</a>
+        <a href="nosepin.html" class="nav-link">Nose Pin</a>
+        <a href="ringlet.html" class="nav-link">Ringlet</a>
+        <a href="sale.html" class="nav-link">SALE</a>
+        <a href="deals.html" class="nav-link">Deals & Bundles</a>
+        <a
+          href="viewall.html"
+          class="nav-link"
+          style="text-decoration: underline; text-underline-offset: 4px"
+          >View All</a
+        >
+      </nav>
+      <!-- Mobile Nav -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="earrings.html" class="nav-link">Earrings</a>
+        <a href="neckpiece.html" class="nav-link">Neckpiece</a>
+        <a href="rings.html" class="nav-link">Rings</a>
+        <a href="bracelets.html" class="nav-link">Bracelets</a>
+        <a href="bangles.html" class="nav-link">Bangles</a>
+        <a href="anklets.html" class="nav-link">Anklets</a>
+        <a href="nosepin.html" class="nav-link">Nose Pin</a>
+        <a href="ringlet.html" class="nav-link">Ringlet</a>
+        <a href="sale.html" class="nav-link">SALE</a>
+        <a href="deals.html" class="nav-link">Deals & Bundles</a>
+        <a
+          href="viewall.html"
+          class="nav-link"
+          style="text-decoration: underline; text-underline-offset: 4px"
+          >View All</a
+        >
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="max-width: 1200px; margin: 0 auto; padding: 32px 24px">
+      <!-- Page Title -->
+      <h1 class="collection-title" style="margin-bottom: 24px">
+        All Collections
+      </h1>
+
+      <!-- Filter & Sort Bar -->
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 28px;
+          padding-bottom: 16px;
+          border-bottom: 1px solid #e0dcd6;
+        "
+      >
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <span style="font-size: 13px; color: #888; align-self: center"
+            >Filter:</span
+          >
+          <button class="filter-btn" onclick="filterByAvailability()">
+            Availability <span>↓</span>
+          </button>
+          <button class="filter-btn" onclick="filterByPrice()">
+            Price <span>↓</span>
+          </button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <span style="font-size: 13px; color: #888">Sort by:</span>
+          <select class="sort-select" onchange="sortProducts(this.value)">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">A–Z</option>
+            <option value="name-desc">Z–A</option>
+          </select>
+          <span id="product-count" style="font-size: 13px; color: #888"
+            >24 products</span
+          >
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div
+        id="product-grid"
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          gap: 20px;
+        "
+      ></div>
+
+      <!-- Pagination -->
+      <div
+        id="pagination"
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 40px;
+        "
+      ></div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #2c2c2c; color: #f5f3ef; margin-top: 60px">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+          "
+        >
+          <div>
+            <div
+              class="logo"
+              style="font-size: 1.3rem; margin-bottom: 14px; color: #f5f3ef"
+            >
+              SUNO SAHELI
+            </div>
+            <p style="font-size: 13px; color: #aaa; line-height: 1.7">
+              By Saheli, For Saheli — curated jewellery for every occasion.
+            </p>
+            <div style="display: flex; gap: 14px; margin-top: 16px">
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Instagram</a
+              >
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Facebook</a
+              >
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Pinterest</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4
+              style="
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.1em;
+                margin-bottom: 14px;
+                color: #f5f3ef;
+              "
+            >
+              QUICK LINKS
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <a
+                href="index.html"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Home</a
+              >
+              <a
+                href="earrings.html"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Earrings</a
+              >
+              <a
+                href="neckpiece.html"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Neckpiece</a
+              >
+              <a
+                href="rings.html"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Rings</a
+              >
+              <a
+                href="sale.html"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >SALE</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4
+              style="
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.1em;
+                margin-bottom: 14px;
+                color: #f5f3ef;
+              "
+            >
+              SUPPORT
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Track Order</a
+              >
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Returns & Exchange</a
+              >
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >Contact Us</a
+              >
+              <a
+                href="#"
+                style="color: #aaa; font-size: 13px; text-decoration: none"
+                >FAQ</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4
+              style="
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0.1em;
+                margin-bottom: 14px;
+                color: #f5f3ef;
+              "
+            >
+              NEWSLETTER
+            </h4>
+            <p style="font-size: 13px; color: #aaa; margin-bottom: 12px">
+              Get exclusive offers & new arrivals.
+            </p>
+            <div style="display: flex; gap: 0">
+              <input
+                type="email"
+                placeholder="Your email"
+                style="
+                  flex: 1;
+                  background: #3c3c3c;
+                  border: none;
+                  padding: 10px 14px;
+                  font-size: 12px;
+                  color: #f5f3ef;
+                  outline: none;
+                  font-family: &quot;Jost&quot;, sans-serif;
+                "
+              />
+              <button
+                style="
+                  background: #f5f3ef;
+                  color: #2c2c2c;
+                  border: none;
+                  padding: 10px 16px;
+                  font-size: 12px;
+                  cursor: pointer;
+                  font-family: &quot;Jost&quot;, sans-serif;
+                "
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+          "
+        >
+          © 2024 Suno Saheli. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const allProducts = [
+        {
+          id: 1,
+          name: "Judy Floral Earrings",
+          price: 800,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 2,
+          name: "Gold Layered Neckpiece",
+          price: 1850,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 3,
+          name: "Adjustable Gold Ring",
+          price: 650,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 4,
+          name: "Gold Chain Bracelet",
+          price: 1100,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 5,
+          name: "Classic Gold Bangles Set",
+          price: 2200,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 6,
+          name: "Simple Silver Anklet",
+          price: 550,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 7,
+          name: "Simple Gold Nose Pin",
+          price: 350,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 8,
+          name: "Gold Midi Ring",
+          price: 380,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 9,
+          name: "Pearl Strand Necklace",
+          price: 2200,
+          oldPrice: 2800,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 10,
+          name: "Floral Statement Ring",
+          price: 850,
+          oldPrice: 1100,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 11,
+          name: "Kundan Bridal Bangles",
+          price: 3500,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 12,
+          name: "Bridal Payal",
+          price: 2100,
+          oldPrice: 2600,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 13,
+          name: "Kundan Choker",
+          price: 3100,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 14,
+          name: "Crystal Tennis Bracelet",
+          price: 1800,
+          oldPrice: 2200,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 15,
+          name: "Pearl Dome Ring",
+          price: 750,
+          oldPrice: 950,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 16,
+          name: "Diamond Look Nose Pin",
+          price: 550,
+          oldPrice: 750,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 17,
+          name: "Traditional Rani Haar",
+          price: 4500,
+          oldPrice: 5500,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 18,
+          name: "Meenakari Bangles",
+          price: 1800,
+          oldPrice: 2300,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 19,
+          name: "Boho Tassel Necklace",
+          price: 1100,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 20,
+          name: "Evil Eye Bracelet",
+          price: 600,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 21,
+          name: "Traditional Payal",
+          price: 1200,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 22,
+          name: "Bridal Nath",
+          price: 2200,
+          oldPrice: 0,
+          sale: false,
+          category: "all",
+        },
+        {
+          id: 23,
+          name: "Stackable Midi Set",
+          price: 750,
+          oldPrice: 950,
+          sale: true,
+          category: "all",
+        },
+        {
+          id: 24,
+          name: "Party Night Bundle",
+          price: 3200,
+          oldPrice: 4500,
+          sale: true,
+          category: "all",
+        },
+      ];
+
+      const ITEMS_PER_PAGE = 8;
+      let currentPage = 1;
+      let filtered = [...allProducts];
+      let sortMode = "featured";
+      let availabilityFilter = false;
+      let priceAscFilter = false;
+
+      function renderGrid() {
+        const grid = document.getElementById("product-grid");
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+        grid.innerHTML = pageItems
+          .map((p) => {
+            const saleBadge = p.sale
+              ? '<span class="sale-badge">Sale</span>'
+              : "";
+            const priceHtml =
+              p.sale && p.oldPrice
+                ? `<span class="price-old">Rs.${p.oldPrice.toLocaleString()}.00 PKR</span><br><span class="price-sale">Rs.${p.price.toLocaleString()}.00 PKR</span>`
+                : `<span class="price-normal">Rs.${p.price.toLocaleString()}.00 PKR</span>`;
+            return `
+                <div class="product-card" onclick="window.location.href='product.html?id=${p.id}&cat=${p.category}'">
+                    <div class="product-img">
+                        ${saleBadge}
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div style="padding:10px 12px 14px;">
+                        <div class="brand-name">Suno Saheli</div>
+                        <div class="product-name">${p.name}</div>
+                        <div style="margin-top:4px;">${priceHtml}</div>
+                    </div>
+                </div>`;
+          })
+          .join("");
+
+        renderPagination();
+        document.getElementById("product-count").textContent =
+          `${filtered.length} products`;
+      }
+
+      function renderPagination() {
+        const total = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+        const pg = document.getElementById("pagination");
+        if (total <= 1) {
+          pg.innerHTML = "";
+          return;
+        }
+        let btns = "";
+        for (let i = 1; i <= total; i++) {
+          btns += `<button class="pagination-btn ${i === currentPage ? "active" : ""}" onclick="goPage(${i})">${i}</button>`;
+        }
+        pg.innerHTML = btns;
+      }
+
+      function goPage(n) {
+        currentPage = n;
+        renderGrid();
+        window.scrollTo(0, 0);
+      }
+
+      function sortProducts(val) {
+        sortMode = val;
+        currentPage = 1;
+        if (val === "price-asc") filtered.sort((a, b) => a.price - b.price);
+        else if (val === "price-desc")
+          filtered.sort((a, b) => b.price - a.price);
+        else if (val === "name-asc")
+          filtered.sort((a, b) => a.name.localeCompare(b.name));
+        else if (val === "name-desc")
+          filtered.sort((a, b) => b.name.localeCompare(a.name));
+        else
+          filtered = [...allProducts].filter(
+            (p) => !availabilityFilter || p.sale,
+          );
+        renderGrid();
+      }
+
+      function filterByAvailability() {
+        availabilityFilter = !availabilityFilter;
+        currentPage = 1;
+        filtered = allProducts.filter((p) => !availabilityFilter || p.sale);
+        renderGrid();
+      }
+
+      function filterByPrice() {
+        priceAscFilter = !priceAscFilter;
+        filtered = [...filtered].sort((a, b) =>
+          priceAscFilter ? a.price - b.price : b.price - a.price,
+        );
+        currentPage = 1;
+        renderGrid();
+      }
+
+      function toggleMobileNav() {
+        document.getElementById("mobileNav").classList.toggle("open");
+      }
+
+      renderGrid();
+    </script>
+  </body>
+</html>
