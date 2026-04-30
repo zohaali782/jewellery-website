@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suno Saheli</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -14,12 +13,7 @@
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              cream: "#f0ede8",
-              blush: "#ebb8c9",
-              dark: "#1a1a1a",
-              gold: "#c9a84c",
-            },
+            colors: { cream: "#f0ede8", dark: "#1a1a1a", gold: "#c9a84c" },
             fontFamily: {
               serif: ["Cormorant Garamond", "serif"],
               sans: ["Jost", "sans-serif"],
@@ -29,9 +23,8 @@
       };
     </script>
   </head>
-
   <body class="font-sans bg-cream text-dark">
-    <!-- ── ANNOUNCEMENT BAR ── -->
+    <!-- Announcement -->
     <div class="bg-white border-b border-gray-200 text-center py-1.5 px-4">
       <p class="text-xs font-semibold tracking-wide">
         Free shipping for orders over 3500!
@@ -41,36 +34,28 @@
       </p>
     </div>
 
-    <!-- ── HEADER ── -->
+    <!-- Header -->
     <header class="bg-cream px-6 md:px-12 py-4">
       <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <button aria-label="Search" class="hover:opacity-60 transition">
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="11" cy="11" r="7" />
-              <line x1="16.5" y1="16.5" x2="22" y2="22" />
-            </svg>
-          </button>
-        </div>
-
+        <button aria-label="Search" class="hover:opacity-60 transition">
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <line x1="16.5" y1="16.5" x2="22" y2="22" />
+          </svg>
+        </button>
         <a
           href="index.html"
           class="font-serif text-2xl md:text-3xl font-semibold tracking-[8px] uppercase"
           >Suno Saheli</a
         >
-
         <div class="flex items-center gap-4">
-          <a
-            href="#"
-            aria-label="Account"
-            class="hidden md:flex hover:opacity-60 transition"
-          >
+          <a href="#" class="hidden md:flex hover:opacity-60 transition">
             <svg
               class="w-5 h-5"
               fill="none"
@@ -82,11 +67,7 @@
               <circle cx="12" cy="7" r="4" />
             </svg>
           </a>
-          <a
-            href="#"
-            aria-label="Cart"
-            class="hidden md:flex hover:opacity-60 transition"
-          >
+          <a href="#" class="hidden md:flex hover:opacity-60 transition">
             <svg
               class="w-5 h-5"
               fill="none"
@@ -99,7 +80,7 @@
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
           </a>
-          <button id="menu-btn" class="md:hidden" aria-label="Open menu">
+          <button id="menu-btn" class="md:hidden">
             <svg
               class="w-5 h-5"
               fill="none"
@@ -130,52 +111,52 @@
           >Earrings</a
         >
         <a
-          href="#"
+          href="neckpiece.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Neckpiece</a
         >
         <a
-          href="#"
+          href="rings.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Rings</a
         >
         <a
-          href="#"
+          href="bracelets.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Bracelets</a
         >
         <a
-          href="#"
+          href="bangles.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Bangles</a
         >
         <a
-          href="#"
+          href="anklets.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Anklets</a
         >
         <a
-          href="#"
+          href="nosepin.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Nose Pin</a
         >
         <a
-          href="#"
+          href="ringlet.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Ringlet</a
         >
         <a
-          href="#"
+          href="sale.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >SALE</a
         >
         <a
-          href="#"
+          href="deals.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Deals & Bundles</a
         >
         <a
-          href="#"
+          href="viewall.html"
           class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >View All</a
         >
@@ -188,25 +169,23 @@
       >
         <a href="index.html" class="text-sm">Home</a>
         <a href="earrings.html" class="text-sm">Earrings</a>
-        <a href="#" class="text-sm">Neckpiece</a>
-        <a href="#" class="text-sm">Rings</a>
-        <a href="#" class="text-sm">Bracelets</a>
-        <a href="#" class="text-sm">Bangles</a>
-        <a href="#" class="text-sm">Anklets</a>
-        <a href="#" class="text-sm">Nose Pin</a>
-        <a href="#" class="text-sm">Ringlet</a>
-        <a href="#" class="text-sm">SALE</a>
-        <a href="#" class="text-sm">Deals & Bundles</a>
-        <a href="#" class="text-sm">View All</a>
+        <a href="neckpiece.html" class="text-sm">Neckpiece</a>
+        <a href="rings.html" class="text-sm">Rings</a>
+        <a href="bracelets.html" class="text-sm">Bracelets</a>
+        <a href="bangles.html" class="text-sm">Bangles</a>
+        <a href="anklets.html" class="text-sm">Anklets</a>
+        <a href="nosepin.html" class="text-sm">Nose Pin</a>
+        <a href="ringlet.html" class="text-sm">Ringlet</a>
+        <a href="sale.html" class="text-sm">SALE</a>
+        <a href="deals.html" class="text-sm">Deals & Bundles</a>
+        <a href="viewall.html" class="text-sm">View All</a>
       </nav>
     </header>
 
     <main class="px-6 md:px-16 py-10">
-      <!-- ── PRODUCT DETAIL ── -->
       <div class="flex flex-col md:flex-row gap-10 md:gap-16">
         <!-- LEFT — Image Gallery -->
         <div class="w-full md:w-1/2">
-          <!-- Main Image -->
           <div
             class="w-full h-80 md:h-[460px] bg-[#e8e4de] rounded-xl overflow-hidden mb-4"
           >
@@ -217,8 +196,6 @@
               class="w-full h-full object-cover"
             />
           </div>
-
-          <!-- Thumbnail Images -->
           <div class="flex gap-3">
             <div
               onclick="changeImage('images/earring.jpg')"
@@ -258,36 +235,39 @@
           <!-- Breadcrumb -->
           <p class="text-xs text-gray-400 mb-3">
             <a href="index.html" class="hover:underline">Home</a> /
-            <a href="earrings.html" class="hover:underline">Earrings</a> /
-            <span id="product-name-breadcrumb">Judy</span>
+            <a
+              id="breadcrumb-category-link"
+              href="earrings.html"
+              class="hover:underline"
+              id="breadcrumb-cat"
+              >Earrings</a
+            >
+            /
+            <span id="product-name-breadcrumb">Product</span>
           </p>
 
-          <!-- Name -->
           <h1
             id="product-name"
             class="font-serif text-3xl md:text-4xl font-normal tracking-wide mb-2"
           >
-            Judy
+            Product
           </h1>
 
-          <!-- Stars -->
           <div class="flex items-center gap-1 mb-4">
             <span class="text-yellow-400 text-sm">★★★★★</span>
             <span class="text-xs text-gray-400">(24 reviews)</span>
           </div>
 
-          <!-- Price -->
           <div class="mb-6">
             <span
               id="product-old-price"
               class="text-sm text-gray-400 line-through mr-2 hidden"
             ></span>
             <span id="product-price" class="text-lg font-medium"
-              >Rs.800.00 PKR</span
+              >Rs.0.00 PKR</span
             >
           </div>
 
-          <!-- Quantity -->
           <div class="flex items-center gap-3 mb-4">
             <span class="text-sm font-medium">Quantity</span>
             <div
@@ -311,7 +291,6 @@
             </div>
           </div>
 
-          <!-- Buttons -->
           <button
             class="w-full bg-dark text-white py-3 rounded text-sm tracking-wide hover:bg-gray-800 transition mb-3"
           >
@@ -323,7 +302,6 @@
             Buy it now
           </button>
 
-          <!-- Product Details -->
           <div class="space-y-2 text-sm border-t border-gray-200 pt-5">
             <p>
               <span class="font-medium">Material:</span>
@@ -343,7 +321,6 @@
             </p>
           </div>
 
-          <!-- Share -->
           <div class="flex items-center gap-2 mt-5 text-sm text-gray-500">
             <svg
               class="w-4 h-4"
@@ -361,7 +338,7 @@
         </div>
       </div>
 
-      <!-- ── YOU MAY ALSO LIKE ── -->
+      <!-- You May Also Like -->
       <section class="mt-20">
         <h2
           class="font-serif text-2xl md:text-3xl font-normal tracking-wide mb-8"
@@ -387,7 +364,6 @@
             <p class="text-xs text-gray-400 line-through">Rs.1,500.00 PKR</p>
             <p class="text-sm">Rs.1,300.00 PKR</p>
           </article>
-
           <article class="group cursor-pointer">
             <div
               class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3"
@@ -401,7 +377,6 @@
             </h3>
             <p class="text-sm">Rs.1,300.00 PKR</p>
           </article>
-
           <article class="group cursor-pointer">
             <div
               class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3"
@@ -415,7 +390,6 @@
             </h3>
             <p class="text-sm">Rs.1,600.00 PKR</p>
           </article>
-
           <article class="group cursor-pointer">
             <div
               class="w-full h-48 md:h-56 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative"
@@ -438,7 +412,7 @@
       </section>
     </main>
 
-    <!-- ── FOOTER ── -->
+    <!-- Footer -->
     <footer class="bg-dark text-white text-center px-6 pt-14 pb-6 mt-14">
       <div class="mb-10">
         <h3 class="font-serif text-3xl md:text-4xl font-semibold mb-3">
@@ -475,65 +449,28 @@
           >Contact Us</a
         >
         <a href="#" class="text-xs text-gray-400 hover:text-white transition"
-          >Jewelry Care</a
-        >
-        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
           >Shipping & Returns</a
         >
       </nav>
-      <div class="flex justify-center gap-5 mb-8">
-        <a
-          href="#"
-          aria-label="Facebook"
-          class="opacity-70 hover:opacity-100 transition"
-        >
-          <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5">
-            <path
-              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-            />
-          </svg>
-        </a>
-        <a
-          href="#"
-          aria-label="Instagram"
-          class="opacity-70 hover:opacity-100 transition"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="2"
-            class="w-5 h-5"
-          >
-            <rect x="2" y="2" width="20" height="20" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
-          </svg>
-        </a>
-      </div>
       <p class="text-xs text-gray-600 border-t border-gray-800 pt-5">
         © 2026, Suno Saheli. All rights reserved.
       </p>
     </footer>
 
     <script>
-      // ── MOBILE MENU ──
-      const btn = document.getElementById("menu-btn");
-      const mobileNav = document.getElementById("mobile-nav");
-      btn.addEventListener("click", () => {
-        mobileNav.classList.toggle("hidden");
-        mobileNav.classList.toggle("flex");
+      // Mobile menu
+      document.getElementById("menu-btn").addEventListener("click", () => {
+        const nav = document.getElementById("mobile-nav");
+        nav.classList.toggle("hidden");
+        nav.classList.toggle("flex");
       });
 
-      // ── IMAGE GALLERY ──
+      // Image gallery
       function changeImage(src) {
         document.getElementById("main-image").src = src;
-        document
-          .querySelectorAll(".thumbnail")
-          .forEach((t) => t.classList.remove("border-dark"));
       }
 
-      // ── QUANTITY ──
+      // Quantity
       let qty = 1;
       function increaseQty() {
         qty++;
@@ -546,23 +483,40 @@
         }
       }
 
-      // ── LOAD PRODUCT FROM URL ──
+      // Load product from URL params
       const params = new URLSearchParams(window.location.search);
-      const id = parseInt(params.get("id")) || 1;
-
-      // Pehle URL se name/price lo agar available ho
       const urlName = params.get("name");
       const urlPrice = params.get("price");
       const urlOldPrice = params.get("oldPrice");
-      const urlSale = params.get("sale");
+      const urlCat = params.get("cat") || "earrings";
+
+      // Category map for breadcrumb
+      const catMap = {
+        earrings: { label: "Earrings", href: "earrings.html" },
+        neckpiece: { label: "Neckpiece", href: "neckpiece.html" },
+        rings: { label: "Rings", href: "rings.html" },
+        bracelets: { label: "Bracelets", href: "bracelets.html" },
+        bangles: { label: "Bangles", href: "bangles.html" },
+        anklets: { label: "Anklets", href: "anklets.html" },
+        nosepin: { label: "Nose Pin", href: "nosepin.html" },
+        ringlet: { label: "Ringlet", href: "ringlet.html" },
+        sale: { label: "SALE", href: "sale.html" },
+        deals: { label: "Deals & Bundles", href: "deals.html" },
+        all: { label: "View All", href: "viewall.html" },
+      };
+
+      const cat = catMap[urlCat] || catMap["earrings"];
+
+      // Set breadcrumb category
+      const breadCatLink = document.getElementById("breadcrumb-category-link");
+      breadCatLink.textContent = cat.label;
+      breadCatLink.href = cat.href;
 
       if (urlName) {
-        // URL se data load karo
-        document.title = `${urlName} – Suno Saheli`;
-        document.getElementById("product-name").textContent =
-          decodeURIComponent(urlName);
-        document.getElementById("product-name-breadcrumb").textContent =
-          decodeURIComponent(urlName);
+        const name = decodeURIComponent(urlName);
+        document.title = `${name} – Suno Saheli`;
+        document.getElementById("product-name").textContent = name;
+        document.getElementById("product-name-breadcrumb").textContent = name;
         document.getElementById("product-price").textContent =
           `Rs.${parseInt(urlPrice).toLocaleString()}.00 PKR`;
 
@@ -572,79 +526,28 @@
           oldEl.classList.remove("hidden");
         }
       } else {
-        // Fallback — earrings hardcoded data
+        // Fallback earrings data
         const products = [
-          {
-            id: 1,
-            name: "Judy",
-            price: 800,
-            oldPrice: null,
-            images: ["images/earring.jpg", "images/earring2.jpg"],
-          },
-          {
-            id: 2,
-            name: "Bravos",
-            price: 1500,
-            oldPrice: 1800,
-            images: ["images/earring2.jpg"],
-          },
-          {
-            id: 3,
-            name: "Doritos",
-            price: 1500,
-            oldPrice: 1800,
-            images: ["images/earring.jpg"],
-          },
-          {
-            id: 4,
-            name: "Pearl Drop",
-            price: 1200,
-            oldPrice: null,
-            images: ["images/photo.jpg"],
-          },
-          {
-            id: 5,
-            name: "Crystal Hoop",
-            price: 1600,
-            oldPrice: 2000,
-            images: ["images/earring.jpg"],
-          },
-          {
-            id: 6,
-            name: "Golden Stud",
-            price: 950,
-            oldPrice: null,
-            images: ["images/earring2.jpg"],
-          },
-          {
-            id: 7,
-            name: "Sophia",
-            price: 1100,
-            oldPrice: null,
-            images: ["images/photo.jpg"],
-          },
-          {
-            id: 8,
-            name: "Luna",
-            price: 1200,
-            oldPrice: 1500,
-            images: ["images/earring.jpg"],
-          },
+          { id: 1, name: "Judy", price: 800, oldPrice: null },
+          { id: 2, name: "Bravos", price: 1500, oldPrice: 1800 },
+          { id: 3, name: "Doritos", price: 1500, oldPrice: 1800 },
+          { id: 4, name: "Pearl Drop", price: 1200, oldPrice: null },
+          { id: 5, name: "Crystal Hoop", price: 1600, oldPrice: 2000 },
+          { id: 6, name: "Golden Stud", price: 950, oldPrice: null },
+          { id: 7, name: "Sophia", price: 1100, oldPrice: null },
+          { id: 8, name: "Luna", price: 1200, oldPrice: 1500 },
         ];
-        const product = products.find((p) => p.id === id) || products[0];
-        document.title = `${product.name} – Suno Saheli`;
-        document.getElementById("product-name").textContent = product.name;
-        document.getElementById("product-name-breadcrumb").textContent =
-          product.name;
+        const id = parseInt(params.get("id")) || 1;
+        const p = products.find((x) => x.id === id) || products[0];
+        document.title = `${p.name} – Suno Saheli`;
+        document.getElementById("product-name").textContent = p.name;
+        document.getElementById("product-name-breadcrumb").textContent = p.name;
         document.getElementById("product-price").textContent =
-          `Rs.${product.price.toLocaleString()}.00 PKR`;
-        if (product.oldPrice) {
+          `Rs.${p.price.toLocaleString()}.00 PKR`;
+        if (p.oldPrice) {
           const oldEl = document.getElementById("product-old-price");
-          oldEl.textContent = `Rs.${product.oldPrice.toLocaleString()}.00 PKR`;
+          oldEl.textContent = `Rs.${p.oldPrice.toLocaleString()}.00 PKR`;
           oldEl.classList.remove("hidden");
-        }
-        if (product.images && product.images.length > 0) {
-          document.getElementById("main-image").src = product.images[0];
         }
       }
     </script>

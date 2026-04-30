@@ -506,7 +506,7 @@
         grid.innerHTML = pageItems
           .map(
             (p) => `
-    <article class="group cursor-pointer" onclick="window.location='product.html?id=${p.id}'">
+    <article class="group cursor-pointer" onclick="window.location='product.html?id=${p.id}&name=${encodeURIComponent(p.name)}&price=${p.price}&oldPrice=${p.oldPrice||0}&sale=${p.sale}&cat=${p.cat}'">
       <div class="w-full h-56 md:h-64 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative">
         <div class="w-full h-full bg-[#d8d3cc]"></div>
         ${p.sale ? '<span class="absolute top-2 left-2 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded">Sale</span>' : ""}
