@@ -121,62 +121,62 @@
       >
         <a
           href="index.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Home</a
         >
         <a
           href="earrings.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Earrings</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Neckpiece</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Rings</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Bracelets</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Bangles</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Anklets</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Nose Pin</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Ringlet</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >SALE</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Deals & Bundles</a
         >
         <a
           href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >View All</a
         >
       </nav>
@@ -547,86 +547,105 @@
       }
 
       // ── LOAD PRODUCT FROM URL ──
-      const products = [
-        {
-          id: 1,
-          name: "Judy",
-          price: 800,
-          oldPrice: null,
-          images: ["images/earring.jpg", "images/earring2.jpg"],
-        },
-        {
-          id: 2,
-          name: "Bravos",
-          price: 1500,
-          oldPrice: 1800,
-          images: ["images/earring2.jpg"],
-        },
-        {
-          id: 3,
-          name: "Doritos",
-          price: 1500,
-          oldPrice: 1800,
-          images: ["images/earring.jpg"],
-        },
-        {
-          id: 4,
-          name: "Pearl Drop",
-          price: 1200,
-          oldPrice: null,
-          images: ["images/photo.jpg"],
-        },
-        {
-          id: 5,
-          name: "Crystal Hoop",
-          price: 1600,
-          oldPrice: 2000,
-          images: ["images/earring.jpg"],
-        },
-        {
-          id: 6,
-          name: "Golden Stud",
-          price: 950,
-          oldPrice: null,
-          images: ["images/earring2.jpg"],
-        },
-        {
-          id: 7,
-          name: "Sophia",
-          price: 1100,
-          oldPrice: null,
-          images: ["images/photo.jpg"],
-        },
-        {
-          id: 8,
-          name: "Luna",
-          price: 1200,
-          oldPrice: 1500,
-          images: ["images/earring.jpg"],
-        },
-      ];
-
       const params = new URLSearchParams(window.location.search);
       const id = parseInt(params.get("id")) || 1;
-      const product = products.find((p) => p.id === id) || products[0];
 
-      // Update page with product data
-      document.title = `${product.name} – Suno Saheli
-      `;
-      document.getElementById("product-name").textContent = product.name;
-      document.getElementById("product-name-breadcrumb").textContent =
-        product.name;
-      document.getElementById("product-price").textContent =
-        `Rs.${product.price.toLocaleString()}.00 PKR`;
+      // Pehle URL se name/price lo agar available ho
+      const urlName = params.get("name");
+      const urlPrice = params.get("price");
+      const urlOldPrice = params.get("oldPrice");
+      const urlSale = params.get("sale");
 
-      if (product.oldPrice) {
-        const oldEl = document.getElementById("product-old-price");
-        oldEl.textContent = `Rs.${product.oldPrice.toLocaleString()}.00 PKR`;
-        oldEl.classList.remove("hidden");
-      }
+      if (urlName) {
+        // URL se data load karo
+        document.title = `${urlName} – Suno Saheli`;
+        document.getElementById("product-name").textContent =
+          decodeURIComponent(urlName);
+        document.getElementById("product-name-breadcrumb").textContent =
+          decodeURIComponent(urlName);
+        document.getElementById("product-price").textContent =
+          `Rs.${parseInt(urlPrice).toLocaleString()}.00 PKR`;
 
-      if (product.images && product.images.length > 0) {
-        document.getElementById("main-image").src = product.images[0];
+        if (urlOldPrice && urlOldPrice !== "0") {
+          const oldEl = document.getElementById("product-old-price");
+          oldEl.textContent = `Rs.${parseInt(urlOldPrice).toLocaleString()}.00 PKR`;
+          oldEl.classList.remove("hidden");
+        }
+      } else {
+        // Fallback — earrings hardcoded data
+        const products = [
+          {
+            id: 1,
+            name: "Judy",
+            price: 800,
+            oldPrice: null,
+            images: ["images/earring.jpg", "images/earring2.jpg"],
+          },
+          {
+            id: 2,
+            name: "Bravos",
+            price: 1500,
+            oldPrice: 1800,
+            images: ["images/earring2.jpg"],
+          },
+          {
+            id: 3,
+            name: "Doritos",
+            price: 1500,
+            oldPrice: 1800,
+            images: ["images/earring.jpg"],
+          },
+          {
+            id: 4,
+            name: "Pearl Drop",
+            price: 1200,
+            oldPrice: null,
+            images: ["images/photo.jpg"],
+          },
+          {
+            id: 5,
+            name: "Crystal Hoop",
+            price: 1600,
+            oldPrice: 2000,
+            images: ["images/earring.jpg"],
+          },
+          {
+            id: 6,
+            name: "Golden Stud",
+            price: 950,
+            oldPrice: null,
+            images: ["images/earring2.jpg"],
+          },
+          {
+            id: 7,
+            name: "Sophia",
+            price: 1100,
+            oldPrice: null,
+            images: ["images/photo.jpg"],
+          },
+          {
+            id: 8,
+            name: "Luna",
+            price: 1200,
+            oldPrice: 1500,
+            images: ["images/earring.jpg"],
+          },
+        ];
+        const product = products.find((p) => p.id === id) || products[0];
+        document.title = `${product.name} – Suno Saheli`;
+        document.getElementById("product-name").textContent = product.name;
+        document.getElementById("product-name-breadcrumb").textContent =
+          product.name;
+        document.getElementById("product-price").textContent =
+          `Rs.${product.price.toLocaleString()}.00 PKR`;
+        if (product.oldPrice) {
+          const oldEl = document.getElementById("product-old-price");
+          oldEl.textContent = `Rs.${product.oldPrice.toLocaleString()}.00 PKR`;
+          oldEl.classList.remove("hidden");
+        }
+        if (product.images && product.images.length > 0) {
+          document.getElementById("main-image").src = product.images[0];
+        }
       }
     </script>
   </body>

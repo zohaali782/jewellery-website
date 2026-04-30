@@ -130,119 +130,62 @@
       >
         <a
           href="index.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Home</a
         >
         <a
           href="earrings.html"
-          class="text-xs tracking-wide underline underline-offset-4"
+          class="text-sm tracking-wide underline underline-offset-4"
           >Earrings</a
         >
         <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Neckpiece</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Rings</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Bracelets</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Bangles</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Anklets</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Nose Pin</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Ringlet</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >SALE</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >Deals & Bundles</a
-        >
-        <a
-          href="#"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
-          >View All</a
-        >
-      </nav>
-
-      <!-- Mobile Nav -->
-      <nav
-        id="mobile-nav"
-        class="hidden flex-col gap-4 pt-4 mt-4 border-t border-gray-200"
-      >
-        <<a
           href="neckpiece.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Neckpiece</a
         >
         <a
           href="rings.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Rings</a
         >
         <a
           href="bracelets.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Bracelets</a
         >
         <a
           href="bangles.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Bangles</a
         >
         <a
           href="anklets.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Anklets</a
         >
         <a
           href="nosepin.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Nose Pin</a
         >
         <a
           href="ringlet.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Ringlet</a
         >
         <a
           href="sale.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >SALE</a
         >
         <a
           href="deals.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >Deals & Bundles</a
         >
         <a
           href="viewall.html"
-          class="text-xs tracking-wide hover:underline underline-offset-4 transition"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
           >View All</a
         >
       </nav>
@@ -627,7 +570,7 @@
         grid.innerHTML = pageProducts
           .map(
             (p) => `
-        <article class="group cursor-pointer" onclick="window.location='product.html?id=${p.id}'">
+        <article class="group cursor-pointer" onclick="window.location='product.html?id=${p.id}&name=${encodeURIComponent(p.name)}&price=${p.price}&oldPrice=${p.oldPrice || 0}&sale=${p.sale}'">
           <div class="w-full h-56 md:h-64 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative">
             ${p.image ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" />` : '<div class="w-full h-full bg-[#d8d3cc]"></div>'}
             ${p.sale ? '<span class="absolute top-2 left-2 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded">Sale</span>' : ""}

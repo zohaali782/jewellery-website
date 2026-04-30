@@ -6,552 +6,296 @@
     <title>Nose Pin – Suno Saheli</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Jost", sans-serif;
-        background-color: #f5f3ef;
-        color: #2c2c2c;
-      }
-      .logo {
-        font-family: "Cormorant Garamond", serif;
-        letter-spacing: 0.18em;
-      }
-      .nav-link {
-        font-size: 13px;
-        color: #2c2c2c;
-        text-decoration: none;
-        transition: opacity 0.2s;
-        white-space: nowrap;
-      }
-      .nav-link:hover {
-        opacity: 0.6;
-      }
-      .collection-title {
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 300;
-        font-size: 2.2rem;
-      }
-      .filter-btn {
-        border: 1px solid #c8c4bc;
-        background: transparent;
-        padding: 6px 14px;
-        font-size: 12px;
-        font-family: "Jost", sans-serif;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        transition: background 0.2s;
-      }
-      .filter-btn:hover {
-        background: #ede9e3;
-      }
-      .sort-select {
-        border: 1px solid #c8c4bc;
-        background: #f5f3ef;
-        padding: 6px 14px;
-        font-size: 12px;
-        font-family: "Jost", sans-serif;
-        cursor: pointer;
-        outline: none;
-      }
-      .product-card {
-        background: #fff;
-        border-radius: 2px;
-        overflow: hidden;
-        cursor: pointer;
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease;
-      }
-      .product-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
-      }
-      .product-img {
-        width: 100%;
-        aspect-ratio: 1;
-        background: #e8e4de;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .sale-badge {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: #5c6b4e;
-        color: white;
-        font-size: 11px;
-        padding: 3px 10px;
-        border-radius: 2px;
-        font-family: "Jost", sans-serif;
-      }
-      .brand-name {
-        font-size: 11px;
-        color: #888;
-        margin-top: 10px;
-      }
-      .product-name {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1rem;
-        font-weight: 500;
-        margin-top: 2px;
-      }
-      .price-normal {
-        font-size: 13px;
-        color: #2c2c2c;
-        margin-top: 3px;
-      }
-      .price-old {
-        font-size: 12px;
-        color: #aaa;
-        text-decoration: line-through;
-      }
-      .price-sale {
-        font-size: 13px;
-        color: #2c2c2c;
-      }
-      .pagination-btn {
-        border: 1px solid #c8c4bc;
-        background: transparent;
-        padding: 7px 14px;
-        font-size: 12px;
-        font-family: "Jost", sans-serif;
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-      .pagination-btn:hover,
-      .pagination-btn.active {
-        background: #2c2c2c;
-        color: #fff;
-      }
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-      }
-      .hamburger span {
-        width: 22px;
-        height: 1.5px;
-        background: #2c2c2c;
-        display: block;
-        transition: all 0.3s;
-      }
-      .mobile-nav {
-        display: none;
-        flex-direction: column;
-        background: #f5f3ef;
-        padding: 20px;
-        gap: 14px;
-        border-top: 1px solid #e0dcd6;
-      }
-      .mobile-nav.open {
-        display: flex;
-      }
-      @media (max-width: 768px) {
-        .desktop-nav {
-          display: none !important;
-        }
-        .hamburger {
-          display: flex;
-        }
-      }
-    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { cream: "#f0ede8", dark: "#1a1a1a", gold: "#c9a84c" },
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              sans: ["Jost", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <!-- Announcement Bar -->
-    <div
-      style="
-        background: #2c2c2c;
-        color: #f5f3ef;
-        text-align: center;
-        padding: 8px;
-        font-size: 12px;
-        letter-spacing: 0.05em;
-      "
-    >
-      Free shipping for orders over 3500! &nbsp;|&nbsp; Premium Packaging On
-      Orders Above Pkr 10,000
+  <body class="font-sans bg-cream text-dark">
+    <!-- Announcement -->
+    <div class="bg-white border-b border-gray-200 text-center py-1.5 px-4">
+      <p class="text-xs font-semibold tracking-wide">
+        Free shipping for orders over 3500!
+      </p>
+      <p class="text-xs tracking-wide">
+        Premium Packaging On Orders Above Pkr 10,000
+      </p>
     </div>
 
     <!-- Header -->
-    <header
-      style="
-        background: #f5f3ef;
-        border-bottom: 1px solid #e0dcd6;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      "
-    >
-      <div
-        style="
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 16px 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        "
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="#2c2c2c"
-          stroke-width="1.5"
-          style="cursor: pointer"
-        >
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.35-4.35" />
-        </svg>
-        <div
-          class="logo"
-          style="
-            font-size: 1.5rem;
-            font-weight: 400;
-            letter-spacing: 0.2em;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-          "
-        >
-          SUNO SAHELI
-        </div>
-        <div style="display: flex; align-items: center; gap: 16px">
+    <header class="bg-cream px-6 md:px-12 py-4">
+      <div class="flex items-center justify-between">
+        <button aria-label="Search" class="hover:opacity-60 transition">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            class="w-5 h-5"
             fill="none"
-            viewBox="0 0 24 24"
-            stroke="#2c2c2c"
+            stroke="currentColor"
             stroke-width="1.5"
-            style="cursor: pointer"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="none"
             viewBox="0 0 24 24"
-            stroke="#2c2c2c"
-            stroke-width="1.5"
-            style="cursor: pointer"
           >
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <path d="M16 10a4 4 0 0 1-8 0" />
+            <circle cx="11" cy="11" r="7" />
+            <line x1="16.5" y1="16.5" x2="22" y2="22" />
           </svg>
-          <div class="hamburger" onclick="toggleMobileNav()">
-            <span></span><span></span><span></span>
-          </div>
+        </button>
+        <a
+          href="index.html"
+          class="font-serif text-2xl md:text-3xl font-semibold tracking-[8px] uppercase"
+          >Suno Saheli</a
+        >
+        <div class="flex items-center gap-4">
+          <a href="#" class="hidden md:flex hover:opacity-60 transition">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+          <a href="#" class="hidden md:flex hover:opacity-60 transition">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </a>
+          <button id="menu-btn" class="md:hidden">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
         </div>
       </div>
       <!-- Desktop Nav -->
       <nav
-        class="desktop-nav"
-        style="
-          border-top: 1px solid #e0dcd6;
-          padding: 12px 24px;
-          display: flex;
-          justify-content: center;
-          gap: 28px;
-          flex-wrap: wrap;
-        "
+        class="hidden md:flex flex-wrap justify-center gap-6 lg:gap-8 pt-4 mt-4 border-t border-gray-200"
       >
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="earrings.html" class="nav-link">Earrings</a>
-        <a href="neckpiece.html" class="nav-link">Neckpiece</a>
-        <a href="rings.html" class="nav-link">Rings</a>
-        <a href="bracelets.html" class="nav-link">Bracelets</a>
-        <a href="bangles.html" class="nav-link">Bangles</a>
-        <a href="anklets.html" class="nav-link">Anklets</a>
+        <a
+          href="index.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Home</a
+        >
+        <a
+          href="earrings.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Earrings</a
+        >
+        <a
+          href="neckpiece.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Neckpiece</a
+        >
+        <a
+          href="rings.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Rings</a
+        >
+        <a
+          href="bracelets.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Bracelets</a
+        >
+        <a
+          href="bangles.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Bangles</a
+        >
+        <a
+          href="anklets.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Anklets</a
+        >
         <a
           href="nosepin.html"
-          class="nav-link"
-          style="text-decoration: underline; text-underline-offset: 4px"
+          class="text-sm tracking-wide underline underline-offset-4"
           >Nose Pin</a
         >
-        <a href="ringlet.html" class="nav-link">Ringlet</a>
-        <a href="sale.html" class="nav-link">SALE</a>
-        <a href="deals.html" class="nav-link">Deals & Bundles</a>
-        <a href="viewall.html" class="nav-link">View All</a>
+        <a
+          href="ringlet.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Ringlet</a
+        >
+        <a
+          href="sale.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >SALE</a
+        >
+        <a
+          href="deals.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >Deals & Bundles</a
+        >
+        <a
+          href="viewall.html"
+          class="text-sm tracking-wide hover:underline underline-offset-4 transition"
+          >View All</a
+        >
       </nav>
       <!-- Mobile Nav -->
-      <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="earrings.html" class="nav-link">Earrings</a>
-        <a href="neckpiece.html" class="nav-link">Neckpiece</a>
-        <a href="rings.html" class="nav-link">Rings</a>
-        <a href="bracelets.html" class="nav-link">Bracelets</a>
-        <a href="bangles.html" class="nav-link">Bangles</a>
-        <a href="anklets.html" class="nav-link">Anklets</a>
-        <a
-          href="nosepin.html"
-          class="nav-link"
-          style="text-decoration: underline; text-underline-offset: 4px"
-          >Nose Pin</a
-        >
-        <a href="ringlet.html" class="nav-link">Ringlet</a>
-        <a href="sale.html" class="nav-link">SALE</a>
-        <a href="deals.html" class="nav-link">Deals & Bundles</a>
-        <a href="viewall.html" class="nav-link">View All</a>
-      </div>
+      <nav
+        id="mobile-nav"
+        class="hidden flex-col gap-4 pt-4 mt-4 border-t border-gray-200"
+      >
+        <a href="index.html" class="text-sm">Home</a>
+        <a href="earrings.html" class="text-sm">Earrings</a>
+        <a href="neckpiece.html" class="text-sm">Neckpiece</a>
+        <a href="rings.html" class="text-sm">Rings</a>
+        <a href="bracelets.html" class="text-sm">Bracelets</a>
+        <a href="bangles.html" class="text-sm">Bangles</a>
+        <a href="anklets.html" class="text-sm">Anklets</a>
+        <a href="nosepin.html" class="text-sm underline">Nose Pin</a>
+        <a href="ringlet.html" class="text-sm">Ringlet</a>
+        <a href="sale.html" class="text-sm">SALE</a>
+        <a href="deals.html" class="text-sm">Deals & Bundles</a>
+        <a href="viewall.html" class="text-sm">View All</a>
+      </nav>
     </header>
 
-    <!-- Main Content -->
-    <main style="max-width: 1200px; margin: 0 auto; padding: 32px 24px">
-      <!-- Page Title -->
-      <h1 class="collection-title" style="margin-bottom: 24px">
+    <main class="px-6 md:px-16 py-10">
+      <h1
+        class="font-serif text-3xl md:text-4xl font-normal tracking-wide mb-8"
+      >
         Nose Pin Collection
       </h1>
 
-      <!-- Filter & Sort Bar -->
+      <!-- Filter + Sort -->
       <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 12px;
-          margin-bottom: 28px;
-          padding-bottom: 16px;
-          border-bottom: 1px solid #e0dcd6;
-        "
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8 pb-4 border-b border-gray-200"
       >
-        <div style="display: flex; gap: 10px; flex-wrap: wrap">
-          <span style="font-size: 13px; color: #888; align-self: center"
-            >Filter:</span
-          >
-          <button class="filter-btn" onclick="filterByAvailability()">
-            Availability <span>↓</span>
-          </button>
-          <button class="filter-btn" onclick="filterByPrice()">
-            Price <span>↓</span>
-          </button>
+        <div class="flex items-center gap-3 flex-wrap">
+          <span class="text-sm font-medium">Filter:</span>
+          <div class="relative">
+            <select
+              id="filter-availability"
+              class="text-xs border border-gray-300 rounded px-3 py-1.5 bg-cream appearance-none pr-6 cursor-pointer focus:outline-none"
+            >
+              <option value="all">Availability</option>
+              <option value="sale">On Sale</option>
+            </select>
+            <span
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"
+              >↓</span
+            >
+          </div>
+          <div class="relative">
+            <select
+              id="filter-price"
+              class="text-xs border border-gray-300 rounded px-3 py-1.5 bg-cream appearance-none pr-6 cursor-pointer focus:outline-none"
+            >
+              <option value="all">Price</option>
+              <option value="low">Low to High</option>
+              <option value="high">High to Low</option>
+            </select>
+            <span
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"
+              >↓</span
+            >
+          </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 12px">
-          <span style="font-size: 13px; color: #888">Sort by:</span>
-          <select class="sort-select" onchange="sortProducts(this.value)">
-            <option value="featured">Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">A–Z</option>
-            <option value="name-desc">Z–A</option>
-          </select>
-          <span id="product-count" style="font-size: 13px; color: #888"
+        <div class="flex items-center gap-3">
+          <span class="text-sm">Sort by:</span>
+          <div class="relative">
+            <select
+              id="sort-by"
+              class="text-xs border border-gray-300 rounded px-3 py-1.5 bg-cream appearance-none pr-6 cursor-pointer focus:outline-none"
+            >
+              <option value="featured">Featured</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
+            </select>
+            <span
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none"
+              >↓</span
+            >
+          </div>
+          <span id="product-count" class="text-xs text-gray-500"
             >24 products</span
           >
         </div>
       </div>
 
-      <!-- Product Grid -->
       <div
         id="product-grid"
-        style="
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-          gap: 20px;
-        "
+        class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6"
       ></div>
-
-      <!-- Pagination -->
       <div
+        class="flex items-center justify-center gap-2 mt-14"
         id="pagination"
-        style="
-          display: flex;
-          justify-content: center;
-          gap: 8px;
-          margin-top: 40px;
-        "
       ></div>
     </main>
 
     <!-- Footer -->
-    <footer style="background: #2c2c2c; color: #f5f3ef; margin-top: 60px">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px">
+    <footer class="bg-dark text-white text-center px-6 pt-14 pb-6 mt-14">
+      <div class="mb-10">
+        <h3 class="font-serif text-3xl md:text-4xl font-semibold mb-3">
+          Subscribe to our emails
+        </h3>
+        <p class="text-xs text-gray-400 mb-6">
+          Join our email list for exclusive offers and the latest news.
+        </p>
         <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin-bottom: 40px;
-          "
+          class="flex items-center max-w-sm mx-auto border border-gray-600 rounded overflow-hidden"
         >
-          <div>
-            <div
-              class="logo"
-              style="font-size: 1.3rem; margin-bottom: 14px; color: #f5f3ef"
-            >
-              SUNO SAHELI
-            </div>
-            <p style="font-size: 13px; color: #aaa; line-height: 1.7">
-              By Saheli, For Saheli — curated jewellery for every occasion.
-            </p>
-            <div style="display: flex; gap: 14px; margin-top: 16px">
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Instagram</a
-              >
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Facebook</a
-              >
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Pinterest</a
-              >
-            </div>
-          </div>
-          <div>
-            <h4
-              style="
-                font-size: 13px;
-                font-weight: 500;
-                letter-spacing: 0.1em;
-                margin-bottom: 14px;
-                color: #f5f3ef;
-              "
-            >
-              QUICK LINKS
-            </h4>
-            <div style="display: flex; flex-direction: column; gap: 8px">
-              <a
-                href="index.html"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Home</a
-              >
-              <a
-                href="earrings.html"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Earrings</a
-              >
-              <a
-                href="neckpiece.html"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Neckpiece</a
-              >
-              <a
-                href="rings.html"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Rings</a
-              >
-              <a
-                href="sale.html"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >SALE</a
-              >
-            </div>
-          </div>
-          <div>
-            <h4
-              style="
-                font-size: 13px;
-                font-weight: 500;
-                letter-spacing: 0.1em;
-                margin-bottom: 14px;
-                color: #f5f3ef;
-              "
-            >
-              SUPPORT
-            </h4>
-            <div style="display: flex; flex-direction: column; gap: 8px">
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Track Order</a
-              >
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Returns & Exchange</a
-              >
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >Contact Us</a
-              >
-              <a
-                href="#"
-                style="color: #aaa; font-size: 13px; text-decoration: none"
-                >FAQ</a
-              >
-            </div>
-          </div>
-          <div>
-            <h4
-              style="
-                font-size: 13px;
-                font-weight: 500;
-                letter-spacing: 0.1em;
-                margin-bottom: 14px;
-                color: #f5f3ef;
-              "
-            >
-              NEWSLETTER
-            </h4>
-            <p style="font-size: 13px; color: #aaa; margin-bottom: 12px">
-              Get exclusive offers & new arrivals.
-            </p>
-            <div style="display: flex; gap: 0">
-              <input
-                type="email"
-                placeholder="Your email"
-                style="
-                  flex: 1;
-                  background: #3c3c3c;
-                  border: none;
-                  padding: 10px 14px;
-                  font-size: 12px;
-                  color: #f5f3ef;
-                  outline: none;
-                  font-family: &quot;Jost&quot;, sans-serif;
-                "
-              />
-              <button
-                style="
-                  background: #f5f3ef;
-                  color: #2c2c2c;
-                  border: none;
-                  padding: 10px 16px;
-                  font-size: 12px;
-                  cursor: pointer;
-                  font-family: &quot;Jost&quot;, sans-serif;
-                "
-              >
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          style="
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-          "
-        >
-          © 2024 Suno Saheli. All rights reserved.
+          <input
+            type="email"
+            placeholder="Email"
+            class="flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder-gray-500 outline-none font-sans"
+          />
+          <button
+            class="px-4 py-3 border-l border-gray-600 hover:bg-gray-800 transition"
+          >
+            →
+          </button>
         </div>
       </div>
+      <nav
+        class="flex flex-wrap justify-center gap-5 mb-6 border-t border-gray-800 pt-8"
+      >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Search</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >About Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Contact Us</a
+        >
+        <a href="#" class="text-xs text-gray-400 hover:text-white transition"
+          >Shipping & Returns</a
+        >
+      </nav>
+      <p class="text-xs text-gray-600 border-t border-gray-800 pt-5">
+        © 2026, Suno Saheli. All rights reserved.
+      </p>
     </footer>
 
     <script>
@@ -562,7 +306,7 @@
           price: 350,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 2,
@@ -570,7 +314,7 @@
           price: 550,
           oldPrice: 750,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 3,
@@ -578,7 +322,7 @@
           price: 420,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 4,
@@ -586,7 +330,7 @@
           price: 480,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 5,
@@ -594,7 +338,7 @@
           price: 650,
           oldPrice: 850,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 6,
@@ -602,7 +346,7 @@
           price: 300,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 7,
@@ -610,7 +354,7 @@
           price: 400,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 8,
@@ -618,7 +362,7 @@
           price: 1200,
           oldPrice: 1500,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 9,
@@ -626,7 +370,7 @@
           price: 280,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 10,
@@ -634,7 +378,7 @@
           price: 380,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 11,
@@ -642,7 +386,7 @@
           price: 950,
           oldPrice: 1200,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 12,
@@ -650,7 +394,7 @@
           price: 2200,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 13,
@@ -658,7 +402,7 @@
           price: 450,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 14,
@@ -666,7 +410,7 @@
           price: 800,
           oldPrice: 1050,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 15,
@@ -674,7 +418,7 @@
           price: 320,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 16,
@@ -682,7 +426,7 @@
           price: 500,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 17,
@@ -690,7 +434,7 @@
           price: 600,
           oldPrice: 800,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 18,
@@ -698,7 +442,7 @@
           price: 250,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 19,
@@ -706,7 +450,7 @@
           price: 450,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 20,
@@ -714,7 +458,7 @@
           price: 750,
           oldPrice: 1000,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 21,
@@ -722,7 +466,7 @@
           price: 220,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 22,
@@ -730,7 +474,7 @@
           price: 380,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 23,
@@ -738,7 +482,7 @@
           price: 520,
           oldPrice: 700,
           sale: true,
-          category: "nosepin",
+          cat: "nosepin",
         },
         {
           id: 24,
@@ -746,109 +490,88 @@
           price: 1800,
           oldPrice: 0,
           sale: false,
-          category: "nosepin",
+          cat: "nosepin",
         },
       ];
-
-      const ITEMS_PER_PAGE = 8;
+      const PER_PAGE = 8;
       let currentPage = 1;
       let filtered = [...allProducts];
-      let sortMode = "featured";
-      let availabilityFilter = false;
-      let priceAscFilter = false;
 
-      function renderGrid() {
+      function renderProducts() {
         const grid = document.getElementById("product-grid");
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
-
-        grid.innerHTML = pageItems
-          .map((p) => {
-            const saleBadge = p.sale
-              ? '<span class="sale-badge">Sale</span>'
-              : "";
-            const priceHtml =
-              p.sale && p.oldPrice
-                ? `<span class="price-old">Rs.${p.oldPrice.toLocaleString()}.00 PKR</span><br><span class="price-sale">Rs.${p.price.toLocaleString()}.00 PKR</span>`
-                : `<span class="price-normal">Rs.${p.price.toLocaleString()}.00 PKR</span>`;
-            return `
-                <div class="product-card" onclick="window.location.href='product.html?id=${p.id}&cat=${p.category}'">
-                    <div class="product-img">
-                        ${saleBadge}
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                    </div>
-                    <div style="padding:10px 12px 14px;">
-                        <div class="brand-name">Suno Saheli</div>
-                        <div class="product-name">${p.name}</div>
-                        <div style="margin-top:4px;">${priceHtml}</div>
-                    </div>
-                </div>`;
-          })
-          .join("");
-
-        renderPagination();
+        const start = (currentPage - 1) * PER_PAGE;
+        const pageItems = filtered.slice(start, start + PER_PAGE);
         document.getElementById("product-count").textContent =
-          `${filtered.length} products`;
+          filtered.length + " products";
+        grid.innerHTML = pageItems
+          .map(
+            (p) => `
+    <article class="group cursor-pointer" onclick="window.location='product.html?id=${p.id}'">
+      <div class="w-full h-56 md:h-64 bg-[#e8e4de] rounded-lg overflow-hidden mb-3 relative">
+        <div class="w-full h-full bg-[#d8d3cc]"></div>
+        ${p.sale ? '<span class="absolute top-2 left-2 bg-[#6b7c5c] text-white text-xs px-2 py-0.5 rounded">Sale</span>' : ""}
+      </div>
+      <p class="text-xs text-gray-500 mb-0.5 tracking-widest">Suno Saheli</p>
+      <h2 class="text-sm font-medium mb-1 group-hover:underline underline-offset-2">${p.name}</h2>
+      ${p.oldPrice ? `<p class="text-xs text-gray-400 line-through">Rs.${p.oldPrice.toLocaleString()}.00 PKR</p>` : ""}
+      <p class="text-sm">Rs.${p.price.toLocaleString()}.00 PKR</p>
+    </article>`,
+          )
+          .join("");
+        renderPagination();
       }
 
       function renderPagination() {
-        const total = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+        const total = Math.ceil(filtered.length / PER_PAGE);
         const pg = document.getElementById("pagination");
         if (total <= 1) {
           pg.innerHTML = "";
           return;
         }
-        let btns = "";
-        for (let i = 1; i <= total; i++) {
-          btns += `<button class="pagination-btn ${i === currentPage ? "active" : ""}" onclick="goPage(${i})">${i}</button>`;
-        }
-        pg.innerHTML = btns;
+        let html = `<button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? "disabled" : ""} class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-200 transition text-gray-500 disabled:opacity-30">‹</button>`;
+        for (let i = 1; i <= total; i++)
+          html += `<button onclick="changePage(${i})" class="w-8 h-8 flex items-center justify-center rounded text-sm transition ${i === currentPage ? "bg-dark text-white" : "hover:bg-gray-200"}">${i}</button>`;
+        html += `<button onclick="changePage(${currentPage + 1})" ${currentPage === total ? "disabled" : ""} class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-200 transition text-gray-500 disabled:opacity-30">›</button>`;
+        pg.innerHTML = html;
       }
 
-      function goPage(n) {
-        currentPage = n;
-        renderGrid();
-        window.scrollTo(0, 0);
+      function changePage(p) {
+        const total = Math.ceil(filtered.length / PER_PAGE);
+        if (p < 1 || p > total) return;
+        currentPage = p;
+        renderProducts();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
-      function sortProducts(val) {
-        sortMode = val;
-        currentPage = 1;
-        if (val === "price-asc") filtered.sort((a, b) => a.price - b.price);
-        else if (val === "price-desc")
+      function applyFilters() {
+        const av = document.getElementById("filter-availability").value;
+        const pr = document.getElementById("filter-price").value;
+        const so = document.getElementById("sort-by").value;
+        filtered = allProducts.filter((p) => (av === "sale" ? p.sale : true));
+        if (pr === "low" || so === "low")
+          filtered.sort((a, b) => a.price - b.price);
+        else if (pr === "high" || so === "high")
           filtered.sort((a, b) => b.price - a.price);
-        else if (val === "name-asc")
-          filtered.sort((a, b) => a.name.localeCompare(b.name));
-        else if (val === "name-desc")
-          filtered.sort((a, b) => b.name.localeCompare(a.name));
-        else
-          filtered = [...allProducts].filter(
-            (p) => !availabilityFilter || p.sale,
-          );
-        renderGrid();
-      }
-
-      function filterByAvailability() {
-        availabilityFilter = !availabilityFilter;
         currentPage = 1;
-        filtered = allProducts.filter((p) => !availabilityFilter || p.sale);
-        renderGrid();
+        renderProducts();
       }
 
-      function filterByPrice() {
-        priceAscFilter = !priceAscFilter;
-        filtered = [...filtered].sort((a, b) =>
-          priceAscFilter ? a.price - b.price : b.price - a.price,
-        );
-        currentPage = 1;
-        renderGrid();
-      }
+      document
+        .getElementById("filter-availability")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("filter-price")
+        .addEventListener("change", applyFilters);
+      document
+        .getElementById("sort-by")
+        .addEventListener("change", applyFilters);
+      document.getElementById("menu-btn").addEventListener("click", () => {
+        const nav = document.getElementById("mobile-nav");
+        nav.classList.toggle("hidden");
+        nav.classList.toggle("flex");
+      });
 
-      function toggleMobileNav() {
-        document.getElementById("mobileNav").classList.toggle("open");
-      }
-
-      renderGrid();
+      renderProducts();
     </script>
   </body>
 </html>
